@@ -1,0 +1,84 @@
+[import](common.lg)
+
+# SendActivity_JtEwWm_text()
+- ```Total no of questions are ${dialog.TotalNoOfQuestions}
+Required no of questions to correct for pass :${dialog.RequiredCount} ```
+# SendActivity_JtEwWm()
+[Activity
+    Text = ${SendActivity_JtEwWm_text()}
+]
+
+# SendActivity_DaKhZm_text()
+- I will share 5 multiple choice questions in ${user.CandidateCoreSkill} .
+# SendActivity_DaKhZm()
+[Activity
+    Text = ${SendActivity_DaKhZm_text()}
+]
+
+# ConfirmInput_Prompt_PLwwfT()
+[Activity
+    Text = ${ConfirmInput_Prompt_PLwwfT_text()}
+]
+
+# ConfirmInput_Prompt_PLwwfT_text()
+- ```Please ask ${user.CandidateFirstName}  these questions and choose answer based on ${user.CandidateFirstName}  ${user.dialog.CandidateLastName}'s response over phone
+
+
+Would you ready to screen ${user.CandidateFirstName}?```
+# ChoiceInput_Prompt_F1Pn4q_text()
+- ${dialog.CurrentQuestion}
+# ChoiceInput_Prompt_F1Pn4q()
+[Activity
+    Text = ${ChoiceInput_Prompt_F1Pn4q_text()}
+]
+
+# SendActivity_LD42Ic_text()
+- ${dialog.SelectedAnswer} is correct answer 
+# SendActivity_LD42Ic()
+[Activity
+    Text = ${SendActivity_LD42Ic_text()}
+]
+
+# SendActivity_lTScUd_text()
+- ${dialog.SelectedAnswer} is wrong answer 
+# SendActivity_lTScUd()
+[Activity
+    Text = ${SendActivity_lTScUd_text()}
+]
+
+# SendActivity_iXr8nD_text()
+- ${user.RecruiterFirstName} , ${user.CandidateFirstName}  ${user.CandidateLastName} will be considered for next round 
+# SendActivity_iXr8nD()
+[Activity
+    Text = ${SendActivity_iXr8nD_text()}
+]
+
+# SendActivity_QPJYO8_text()
+- ```I am sorry  ${user.CandidateFirstName}  ${user.CandidateLastName} is failed 
+${user.CandidateFirstName}  ${user.CandidateLastName} needs to improve skills ${user.CandidateCoreSkill}
+```
+# SendActivity_QPJYO8()
+[Activity
+    Text = ${SendActivity_QPJYO8_text()}
+]
+
+# SendActivity_5MCLrU_text()
+- ```Total no of questions : ${dialog.NoOfQuestions}
+
+No of correct answers : ${dialog.NoOfCorrectAnswers}
+
+No of wrong answers : ${dialog.NoOfWrongAnswers}```
+# SendActivity_5MCLrU()
+[Activity
+    Text = ${SendActivity_5MCLrU_text()}
+]
+
+# SendActivity_xEodPm()
+[Activity
+    Text = ${SendActivity_xEodPm_text()}
+]
+
+# SendActivity_xEodPm_text()
+- ```Ok ${user.RecruiterFirstName} , No problem .
+
+Once you are ready . let's do prescreening ${user.CandidateFirstName}```
