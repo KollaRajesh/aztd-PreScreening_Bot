@@ -17,21 +17,6 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SetProperty",
-          "$designer": {
-            "id": "I1ljvY"
-          },
-          "value": "{    \"CoreTechnology\":${user.CandidateCoreSkill},   \"YearOfExperienceInCoreSkill\": ${user.CandidateYearsOfExperience}}",
-          "property": "dialog.request_body"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "7uVBIk"
-          },
-          "activity": "${SendActivity_7uVBIk()}"
-        },
-        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
             "id": "Yj3TI9",

@@ -81,10 +81,3 @@ Once you are ready . let's do prescreening ${user.CandidateFirstName}```
 [Activity
     Text = ${SendActivity_7eSn3R_text()}
 ]
-
-# SendActivity_7uVBIk_text()
-- ${dialog.request_body}
-# SendActivity_7uVBIk()
-[Activity
-    Text = ${SendActivity_7uVBIk_text()}
-]
