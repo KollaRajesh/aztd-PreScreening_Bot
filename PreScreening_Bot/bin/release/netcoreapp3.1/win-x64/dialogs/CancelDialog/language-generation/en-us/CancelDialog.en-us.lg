@@ -1,0 +1,60 @@
+[import](common.lg)
+
+# TextInput_Prompt_0iMkr1_text()
+- May I know Candidate's First name?
+# TextInput_Prompt_0iMkr1()
+[Activity
+    Text = ${TextInput_Prompt_0iMkr1_text()}
+]
+
+# TextInput_Prompt_bzE5h0_text()
+- May I know ${user.CandidateFirstName}'s Last Name?
+# TextInput_Prompt_bzE5h0()
+[Activity
+    Text = ${TextInput_Prompt_bzE5h0_text()}
+]
+
+# TextInput_Prompt_IRPjJK_text()
+- May I know Candidate's First name?
+# TextInput_Prompt_IRPjJK()
+[Activity
+    Text = ${TextInput_Prompt_IRPjJK_text()}
+]
+
+# TextInput_Prompt_7kEQKh_text()
+- May I know ${user.CandidateFirstName}'s Last Name?
+# TextInput_Prompt_7kEQKh()
+[Activity
+    Text = ${TextInput_Prompt_7kEQKh_text()}
+]
+
+# ConfirmInput_Prompt_jxa6pD()
+[Activity
+    Text = ${ConfirmInput_Prompt_jxa6pD_text()}
+]
+
+# ConfirmInput_Prompt_jxa6pD_text()
+- Are you sure you want to cancel?
+- Do you want to cancel?
+- I will cancel this for you, but are you sure?
+# SendActivity_AM043j()
+[Activity
+    Text = ${SendActivity_AM043j_text()}
+]
+
+# SendActivity_AM043j_text()
+- Ok, No problem
+- Sure, I'll cancel
+- Okay, I will stop
+- Got it , I'll stop here
+- No Problem , I will stop
+- Alright , I will cancel it 
+# SendActivity_IP1JsE()
+[Activity
+    Text = ${SendActivity_IP1JsE_text()}
+]
+
+# SendActivity_IP1JsE_text()
+- Okay , Let's continue
+- Alright,Let's move on
+- Let's Continue then 

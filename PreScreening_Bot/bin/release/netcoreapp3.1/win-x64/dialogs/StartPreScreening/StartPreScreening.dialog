@@ -1,0 +1,372 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "pyMKIn",
+    "name": "StartPreScreening",
+    "comment": "Ask questions"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "CyqB4S"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "I1ljvY"
+          },
+          "value": "{    \"CoreTechnology\":${user.CandidateCoreSkill},   \"YearOfExperienceInCoreSkill\": ${user.CandidateYearsOfExperience}}",
+          "property": "dialog.request_body"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "7uVBIk"
+          },
+          "activity": "${SendActivity_7uVBIk()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "Yj3TI9",
+            "comment": ""
+          },
+          "resultProperty": "dialog.api_response",
+          "method": "POST",
+          "url": "https://prod-25.eastus.logic.azure.com:443/workflows/9ad24d33af934625ac5b0b7a33cc7703/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=oxHBV3FSYo58SEmqxUv8Rmm7QPwa4DLPG2urgcCy3As",
+          "contentType": "application/json",
+          "responseType": "json",
+          "body": {
+            "CoreTechnology": "${user.CandidateCoreSkill}",
+            "YearOfExperienceInCoreSkill": "${user.CandidateYearsOfExperience}"
+          }
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "CaprZb"
+          },
+          "condition": "=dialog.api_response.statusCode == 200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "feVk52"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.QnAObj",
+                  "value": "=dialog.api_response.content"
+                },
+                {
+                  "property": "dialog.sample",
+                  "value": {
+                    "TotalNoOfQuestions": 5,
+                    "Questions": [
+                      {
+                        "Question": "1.Which of the following is a PaaS example?",
+                        "Options": [
+                          "Microsoft Power BI Embedded",
+                          "Azure Key Vault",
+                          "Azure Firewall",
+                          "Azure DevOps"
+                        ],
+                        "Answer": "Azure Key Vault"
+                      },
+                      {
+                        "Question": "2.Which of the following best describes Azure Service Bus?",
+                        "Options": [
+                          "It's a network bus that carries traffic for all Azure services",
+                          "It's a set of APIs to access Azure services",
+                          "It's a message broker",
+                          "It's an event streaming service"
+                        ],
+                        "Answer": "It's a message broker"
+                      },
+                      {
+                        "Question": "3.TCP is an example of which OSI layer?",
+                        "Options": [
+                          "Transport",
+                          "Network",
+                          "DataLink",
+                          "Session"
+                        ],
+                        "Answer": "Transport"
+                      },
+                      {
+                        "Question": "4.True or False , Azure Kubernetes Services has far less adminstrative overhead and provides quicker deployment of containers to cloud when compared to Azure Container Instances?",
+                        "Options": [
+                          "True",
+                          "False"
+                        ],
+                        "Answer": "False"
+                      },
+                      {
+                        "Question": "5.Which Azure service should use to store certificates?",
+                        "Options": [
+                          "Azure Storage Account",
+                          "Azure Security Centre",
+                          "Azure Active Directory",
+                          "Azure Key vault"
+                        ],
+                        "Answer": "Azure Key vault"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "property": "dialog.NoOfQuestions",
+                  "value": 0
+                },
+                {
+                  "property": "dialog.NoOfWrongAnswers",
+                  "value": 0
+                },
+                {
+                  "property": "dialog.NoOfCorrectAnswers",
+                  "value": 0
+                },
+                {
+                  "property": "dialog.TotalNoOfQuestions",
+                  "value": "=dialog.QnAObj.TotalNoOfQuestions"
+                },
+                {
+                  "value": "=add(div(dialog.TotalNoOfQuestions, 2),1)",
+                  "property": "dialog.RequiredCount"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "AbNwC7"
+              },
+              "activity": "${SendActivity_AbNwC7()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "c1gdW7"
+              },
+              "activity": "${SendActivity_c1gdW7()}"
+            },
+            {
+              "$kind": "Microsoft.ConfirmInput",
+              "$designer": {
+                "id": "4UKQre"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "prompt": "${ConfirmInput_Prompt_4UKQre()}",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "property": "dialog.ConfirmToProceed",
+              "confirmChoices": [
+                "yes ",
+                "no"
+              ]
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "1bL4tO"
+              },
+              "condition": "=dialog.ConfirmToProceed",
+              "actions": [
+                {
+                  "$kind": "Microsoft.Foreach",
+                  "$designer": {
+                    "id": "dkwrSl"
+                  },
+                  "index": "dialog.foreach.index",
+                  "value": "dialog.foreach.value",
+                  "itemsProperty": "dialog.QnAObj.Questions",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "FIpqZA"
+                      },
+                      "assignments": [
+                        {
+                          "property": "dialog.CurrentQuestion",
+                          "value": "=dialog.foreach.value.Question"
+                        },
+                        {
+                          "property": "dialog.CurrentQuestionOptions",
+                          "value": "=dialog.foreach.value.Options"
+                        },
+                        {
+                          "property": "dialog.CurrentQuestionAnswer",
+                          "value": "=dialog.foreach.value.Answer"
+                        },
+                        {
+                          "property": "dialog.QuestionNumber",
+                          "value": "=add(dialog.foreach.index,1)"
+                        },
+                        {
+                          "value": "=concat(dialog.QuestionNumber,\". \",dialog.CurrentQuestion)",
+                          "property": "dialog.CurrentQuestion"
+                        }
+                      ]
+                    },
+                    {
+                      "$kind": "Microsoft.ChoiceInput",
+                      "$designer": {
+                        "id": "nrqbXp"
+                      },
+                      "defaultLocale": "en-us",
+                      "disabled": false,
+                      "maxTurnCount": 3,
+                      "alwaysPrompt": false,
+                      "allowInterruptions": false,
+                      "unrecognizedPrompt": "",
+                      "invalidPrompt": "",
+                      "defaultValueResponse": "",
+                      "prompt": "${ChoiceInput_Prompt_nrqbXp()}",
+                      "choiceOptions": {
+                        "includeNumbers": true,
+                        "inlineOrMore": ", or ",
+                        "inlineOr": " or ",
+                        "inlineSeparator": ", "
+                      },
+                      "style": "heroCard",
+                      "property": "dialog.SelectedAnswer",
+                      "choices": "=dialog.CurrentQuestionOptions"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "WCjP7X"
+                      },
+                      "property": "dialog.NoOfQuestions",
+                      "value": "=add(dialog.NoOfQuestions,1)"
+                    },
+                    {
+                      "$kind": "Microsoft.IfCondition",
+                      "$designer": {
+                        "id": "q2YByS"
+                      },
+                      "condition": "=(dialog.SelectedAnswer==dialog.CurrentQuestionAnswer)",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperties",
+                          "$designer": {
+                            "id": "cUj30p"
+                          },
+                          "assignments": [
+                            {
+                              "property": "dialog.NoOfCorrectAnswers",
+                              "value": "=add(dialog.NoOfCorrectAnswers, 1)"
+                            }
+                          ]
+                        },
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "AVdXKa"
+                          },
+                          "activity": "${SendActivity_AVdXKa()}"
+                        }
+                      ],
+                      "elseActions": [
+                        {
+                          "$kind": "Microsoft.SetProperties",
+                          "$designer": {
+                            "id": "6njPDi"
+                          },
+                          "assignments": [
+                            {
+                              "property": "dialog.NoOfWrongAnswers",
+                              "value": "=add(dialog.NoOfWrongAnswers,1)"
+                            }
+                          ]
+                        },
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "HRlN58"
+                          },
+                          "activity": "${SendActivity_HRlN58()}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "ITH5dd"
+                  },
+                  "condition": "=(dialog.NoOfCorrectAnswers >=dialog.RequiredCount)",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "QIsdL1"
+                      },
+                      "activity": "${SendActivity_QIsdL1()}"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "0MZsZt"
+                      },
+                      "activity": "${SendActivity_0MZsZt()}"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "aAG6UL"
+                  },
+                  "activity": "${SendActivity_aAG6UL()}"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "7eSn3R"
+                  },
+                  "activity": "${SendActivity_7eSn3R()}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "5Kks0C"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "StartPreScreening.lg",
+  "id": "StartPreScreening",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  }
+}

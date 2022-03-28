@@ -1,0 +1,49 @@
+[import](common.lg)
+
+# TextInput_Prompt_1qBiuA_text()
+- May I know ${dialog.CandidateFirstName}'s Last Name?
+# TextInput_Prompt_1qBiuA()
+[Activity
+    Text = ${TextInput_Prompt_1qBiuA_text()}
+]
+
+# TextInput_Prompt_G8EpIk()
+[Activity
+    Text = ${TextInput_Prompt_G8EpIk_text()}
+]
+
+# TextInput_Prompt_G8EpIk_text()
+- May i know candidate name?
+# SendActivity_oBAoy1()
+[Activity
+    Text = ${SendActivity_oBAoy1_text()}
+]
+
+# SendActivity_oBAoy1_text()
+- ```Thank for providing following  candidate details 
+Candidate Name: ${user.CandidateFirstName} ${user.CandidateLastName}
+Core skill:   ${user.CandidateCoreSkill}
+Years of experience: ${user.CandidateYearsOfExperience}
+
+```
+# TextInput_Prompt_fpV7q5()
+[Activity
+    Text = ${TextInput_Prompt_fpV7q5_text()}
+]
+
+# TextInput_Prompt_fpV7q5_text()
+- May i know ${dialog.CandidateFirstName}'s  core technology 
+# NumberInput_Prompt_EGzMLC()
+[Activity
+    Text = ${NumberInput_Prompt_EGzMLC_text()}
+]
+
+# NumberInput_Prompt_EGzMLC_text()
+- May i know ${dialog.CandidateFirstName}'s  years of experience in ${dialog.CandidateCoreSkill}
+# NumberInput_InvalidPrompt_EGzMLC()
+[Activity
+    Text = ${NumberInput_InvalidPrompt_EGzMLC_text()}
+]
+
+# NumberInput_InvalidPrompt_EGzMLC_text()
+- ${user.user.RecruiterFirstName} , years of  experience should be number 

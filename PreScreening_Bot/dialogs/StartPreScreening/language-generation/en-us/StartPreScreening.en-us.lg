@@ -1,84 +1,83 @@
 [import](common.lg)
 
-# SendActivity_JtEwWm_text()
+# SendActivity_AbNwC7_text()
 - ```Total no of questions are ${dialog.TotalNoOfQuestions}
 Required no of questions to correct for pass :${dialog.RequiredCount} ```
-# SendActivity_JtEwWm()
+# SendActivity_AbNwC7()
 [Activity
-    Text = ${SendActivity_JtEwWm_text()}
+    Text = ${SendActivity_AbNwC7_text()}
 ]
 
-# SendActivity_DaKhZm_text()
+# SendActivity_c1gdW7_text()
 - I will share 5 multiple choice questions in ${user.CandidateCoreSkill} .
-# SendActivity_DaKhZm()
+# SendActivity_c1gdW7()
 [Activity
-    Text = ${SendActivity_DaKhZm_text()}
+    Text = ${SendActivity_c1gdW7_text()}
 ]
 
-# ConfirmInput_Prompt_PLwwfT()
-[Activity
-    Text = ${ConfirmInput_Prompt_PLwwfT_text()}
-]
-
-# ConfirmInput_Prompt_PLwwfT_text()
+# ConfirmInput_Prompt_4UKQre_text()
 - ```Please ask ${user.CandidateFirstName}  these questions and choose answer based on ${user.CandidateFirstName}  ${user.dialog.CandidateLastName}'s response over phone
 
 
 Would you ready to screen ${user.CandidateFirstName}?```
-# ChoiceInput_Prompt_F1Pn4q_text()
+# ConfirmInput_Prompt_4UKQre()
+[Activity
+    Text = ${ConfirmInput_Prompt_4UKQre_text()}
+]
+
+# ChoiceInput_Prompt_nrqbXp_text()
 - ${dialog.CurrentQuestion}
-# ChoiceInput_Prompt_F1Pn4q()
+# ChoiceInput_Prompt_nrqbXp()
 [Activity
-    Text = ${ChoiceInput_Prompt_F1Pn4q_text()}
+    Text = ${ChoiceInput_Prompt_nrqbXp_text()}
 ]
 
-# SendActivity_LD42Ic_text()
+# SendActivity_AVdXKa_text()
 - ${dialog.SelectedAnswer} is correct answer 
-# SendActivity_LD42Ic()
+# SendActivity_AVdXKa()
 [Activity
-    Text = ${SendActivity_LD42Ic_text()}
+    Text = ${SendActivity_AVdXKa_text()}
 ]
 
-# SendActivity_lTScUd_text()
+# SendActivity_HRlN58_text()
 - ${dialog.SelectedAnswer} is wrong answer 
-# SendActivity_lTScUd()
+# SendActivity_HRlN58()
 [Activity
-    Text = ${SendActivity_lTScUd_text()}
+    Text = ${SendActivity_HRlN58_text()}
 ]
 
-# SendActivity_iXr8nD_text()
+# SendActivity_QIsdL1_text()
 - ${user.RecruiterFirstName} , ${user.CandidateFirstName}  ${user.CandidateLastName} will be considered for next round 
-# SendActivity_iXr8nD()
+# SendActivity_QIsdL1()
 [Activity
-    Text = ${SendActivity_iXr8nD_text()}
+    Text = ${SendActivity_QIsdL1_text()}
 ]
 
-# SendActivity_QPJYO8_text()
+# SendActivity_0MZsZt_text()
 - ```I am sorry  ${user.CandidateFirstName}  ${user.CandidateLastName} is failed 
 ${user.CandidateFirstName}  ${user.CandidateLastName} needs to improve skills ${user.CandidateCoreSkill}
 ```
-# SendActivity_QPJYO8()
+# SendActivity_0MZsZt()
 [Activity
-    Text = ${SendActivity_QPJYO8_text()}
+    Text = ${SendActivity_0MZsZt_text()}
 ]
 
-# SendActivity_5MCLrU_text()
+# SendActivity_aAG6UL_text()
 - ```Total no of questions : ${dialog.NoOfQuestions}
 
 No of correct answers : ${dialog.NoOfCorrectAnswers}
 
 No of wrong answers : ${dialog.NoOfWrongAnswers}```
-# SendActivity_5MCLrU()
+# SendActivity_aAG6UL()
 [Activity
-    Text = ${SendActivity_5MCLrU_text()}
+    Text = ${SendActivity_aAG6UL_text()}
 ]
 
-# SendActivity_xEodPm()
-[Activity
-    Text = ${SendActivity_xEodPm_text()}
-]
-
-# SendActivity_xEodPm_text()
+# SendActivity_7eSn3R_text()
 - ```Ok ${user.RecruiterFirstName} , No problem .
 
 Once you are ready . let's do prescreening ${user.CandidateFirstName}```
+# SendActivity_7eSn3R()
+[Activity
+    Text = ${SendActivity_7eSn3R_text()}
+]

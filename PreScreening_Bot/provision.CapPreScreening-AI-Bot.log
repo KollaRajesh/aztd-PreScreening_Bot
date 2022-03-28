@@ -1,0 +1,14 @@
+{
+  "profileName": "CapPreScreening-AI-Bot",
+  "jobId": "3a2527b7-c8d7-490b-b93b-9e28b0a32efe",
+  "projectId": "18270.88029486308",
+  "time": "2022-03-17T17:36:13.315Z",
+  "log": [
+    "Creating Azure resources...",
+    "Checking the Existence of the Resource Group ...",
+    "Use the Resource Group: cap-interview-ai at eastus",
+    "Deploying Luis Authoring Resource ...",
+    "Deploying Luis Resource ...",
+    "Provisioning completed successfully!"
+  ]
+}
