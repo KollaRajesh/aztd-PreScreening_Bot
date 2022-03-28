@@ -1,9 +1,0 @@
-[import](common.lg)
-
-# SendActivity_1Geffy()
-[Activity
-    Text = ${SendActivity_1Geffy_text()}
-]
-
-# SendActivity_1Geffy_text()
-- For now , I can only help you on pre-screening candidates 
