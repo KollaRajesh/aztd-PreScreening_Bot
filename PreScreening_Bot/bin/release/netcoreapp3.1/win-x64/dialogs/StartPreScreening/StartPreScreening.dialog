@@ -24,18 +24,19 @@
           },
           "resultProperty": "dialog.api_response",
           "method": "POST",
-          "url": "https://prod-25.eastus.logic.azure.com:443/workflows/9ad24d33af934625ac5b0b7a33cc7703/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=oxHBV3FSYo58SEmqxUv8Rmm7QPwa4DLPG2urgcCy3As",
           "contentType": "application/json",
           "responseType": "json",
           "body": {
             "CoreTechnology": "${user.CandidateCoreSkill}",
             "YearOfExperienceInCoreSkill": "${user.CandidateYearsOfExperience}"
-          }
+          },
+          "url": "=user.InterviewQnAConnector"
         },
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "CaprZb"
+            "id": "CaprZb",
+            "comment": ""
           },
           "condition": "=dialog.api_response.statusCode == 200",
           "actions": [
@@ -130,13 +131,6 @@
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "AbNwC7"
-              },
-              "activity": "${SendActivity_AbNwC7()}"
-            },
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
                 "id": "c1gdW7"
               },
               "activity": "${SendActivity_c1gdW7()}"
@@ -175,6 +169,13 @@
               "condition": "=dialog.ConfirmToProceed",
               "actions": [
                 {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "jrjDao"
+                  },
+                  "activity": "${SendActivity_jrjDao()}"
+                },
+                {
                   "$kind": "Microsoft.Foreach",
                   "$designer": {
                     "id": "dkwrSl"
@@ -204,10 +205,6 @@
                         {
                           "property": "dialog.QuestionNumber",
                           "value": "=add(dialog.foreach.index,1)"
-                        },
-                        {
-                          "value": "=concat(dialog.QuestionNumber,\". \",dialog.CurrentQuestion)",
-                          "property": "dialog.CurrentQuestion"
                         }
                       ]
                     },
@@ -302,6 +299,14 @@
                   "condition": "=(dialog.NoOfCorrectAnswers >=dialog.RequiredCount)",
                   "actions": [
                     {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "NRoQ4P"
+                      },
+                      "property": "dialog.TestResult",
+                      "value": "Pass"
+                    },
+                    {
                       "$kind": "Microsoft.SendActivity",
                       "$designer": {
                         "id": "QIsdL1"
@@ -310,6 +315,14 @@
                     }
                   ],
                   "elseActions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "qlpxcv"
+                      },
+                      "property": "dialog.TestResult",
+                      "value": "Fail"
+                    },
                     {
                       "$kind": "Microsoft.SendActivity",
                       "$designer": {
@@ -325,6 +338,51 @@
                     "id": "aAG6UL"
                   },
                   "activity": "${SendActivity_aAG6UL()}"
+                },
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "56vW21"
+                  },
+                  "resultProperty": "dialog.result_api_response",
+                  "method": "POST",
+                  "url": "=user.InterviewResultConnector",
+                  "body": {
+                    "CandidateDetails": {
+                      "CandidateFirstName": "${user.CandidateFirstName}",
+                      "CandidateLastName": "${user.CandidateLastName}",
+                      "CoreSkillTechnology": "${user.CandidateCoreSkill}",
+                      "NoOfYearsOfExp": "${user.CandidateYearsOfExperience}"
+                    },
+                    "RecruiterDetails": {
+                      "RecruiterFirstName": "${user.RecruiterFirstName}",
+                      "RecruiterLastName": "${user.RecruiterLastName}"
+                    },
+                    "TestDetails": {
+                      "TotalNoOfQuestions": "${dialog.NoOfQuestions}",
+                      "NoOfCorrectQuestions": "${dialog.NoOfCorrectAnswers}",
+                      "NoOfWrongAnswers": "${dialog.NoOfWrongAnswers}",
+                      "Result": "${dialog.TestResult}"
+                    }
+                  },
+                  "contentType": "application/json",
+                  "responseType": "json"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "zV0Q8Y"
+                  },
+                  "condition": "=dialog.result_api_response.statusCode == 200",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "TAJSKf"
+                      },
+                      "activity": "${SendActivity_TAJSKf()}"
+                    }
+                  ]
                 }
               ],
               "elseActions": [

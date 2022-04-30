@@ -13,16 +13,19 @@
 ]
 
 # TextInput_Prompt_G8EpIk_text()
-- May i know candidate name?
+- May i know candidate's first name?
 # SendActivity_oBAoy1()
 [Activity
     Text = ${SendActivity_oBAoy1_text()}
 ]
 
 # SendActivity_oBAoy1_text()
-- ```Thank for providing following  candidate details 
+- ```Thank you for providing following  candidate details 
+
 Candidate Name: ${user.CandidateFirstName} ${user.CandidateLastName}
+
 Core skill:   ${user.CandidateCoreSkill}
+
 Years of experience: ${user.CandidateYearsOfExperience}
 
 ```

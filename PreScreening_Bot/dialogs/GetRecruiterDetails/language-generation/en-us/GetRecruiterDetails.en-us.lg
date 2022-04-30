@@ -20,5 +20,5 @@
 ]
 
 # SendActivity_NeLkk6_text()
-- ```Thank for providing recruiter details
+- ```Thank you for providing recruiter details
 Recruiter Name :${user.RecruiterFirstName} ${user.RecruiterLastName}```
