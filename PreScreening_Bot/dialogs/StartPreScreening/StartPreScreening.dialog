@@ -360,7 +360,7 @@
                     },
                     "TestDetails": {
                       "TotalNoOfQuestions": "${dialog.NoOfQuestions}",
-                      "NoOfCorrectQuestions": "${dialog.NoOfCorrectAnswers}",
+                      "NoOfCorrectAnswers": "${dialog.NoOfCorrectAnswers}",
                       "NoOfWrongAnswers": "${dialog.NoOfWrongAnswers}",
                       "Result": "${dialog.TestResult}"
                     }
