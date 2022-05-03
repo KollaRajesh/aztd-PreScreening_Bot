@@ -43,12 +43,16 @@
 ]
 
 # SendActivity_AM043j_text()
-- Ok, No problem
+- ```Ok, No problem , I'll cancel
+
+if you want to continue , you can use following phrases 
+
+```
 - Sure, I'll cancel
 - Okay, I will stop
 - Got it , I'll stop here
 - No Problem , I will stop
-- Alright , I will cancel it 
+- Alright , I will cancel it
 # SendActivity_IP1JsE()
 [Activity
     Text = ${SendActivity_IP1JsE_text()}

@@ -17,10 +17,3 @@
 - ```Sorry, I  am afraid . I can't help you on that 
 
 I am only trianed on pre\-screening candidates```
-# SendActivity_YhTfYa()
-[Activity
-    Text = ${SendActivity_YhTfYa_text()}
-]
-
-# SendActivity_YhTfYa_text()
-- Okay sure!

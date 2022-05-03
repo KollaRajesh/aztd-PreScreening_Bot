@@ -1,0 +1,73 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "CCuvzt",
+    "name": "BeginPreScreeningProcess",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "3f6fvq"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "9RRfDa"
+          },
+          "activity": "${SendActivity_9RRfDa()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "xuy27G"
+          },
+          "activityProcessed": true,
+          "dialog": "GetRecruiterDetails",
+          "options": {}
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "KqULkX"
+          },
+          "activityProcessed": true,
+          "dialog": "GetCandidateDetails"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "F86AW9"
+          },
+          "assignments": [
+            {
+              "value": "https://prod-25.eastus.logic.azure.com:443/workflows/9ad24d33af934625ac5b0b7a33cc7703/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=oxHBV3FSYo58SEmqxUv8Rmm7QPwa4DLPG2urgcCy3As",
+              "property": "user.InterviewQnAConnector"
+            },
+            {
+              "property": "user.InterviewResultConnector",
+              "value": "https://prod-05.northcentralus.logic.azure.com/workflows/bd9930e833a8479ca5951a3ec01dc00c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xeclFc3v-S8ElmFhlNnJI2mvUzKgWlLqfkCN8jlwMYw"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "bmyw3U"
+          },
+          "activityProcessed": true,
+          "dialog": "StartPreScreening"
+        }
+      ]
+    }
+  ],
+  "generator": "BeginPreScreeningProcess.lg",
+  "recognizer": "BeginPreScreeningProcess.lu.qna",
+  "id": "BeginPreScreeningProcess"
+}

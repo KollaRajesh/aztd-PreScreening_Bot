@@ -22,6 +22,69 @@
             "id": "1Geffy"
           },
           "activity": "${SendActivity_1Geffy()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "sVNFKt"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${ChoiceInput_Prompt_sVNFKt()}",
+          "property": "dialog.HelpChoice",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "style": "heroCard",
+          "choices": [
+            "Pre-screening Candidate",
+            "Cancel conversation"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "IIysP9"
+          },
+          "condition": "=(dialog.HelpChoice ==\"Pre-screening Candidate\")",
+          "actions": [
+            {
+              "$kind": "Microsoft.ReplaceDialog",
+              "$designer": {
+                "id": "hpOewZ"
+              },
+              "activityProcessed": true,
+              "dialog": "BeginPreScreeningProcess"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "7avlGs"
+              },
+              "condition": "==dialog.HelpChoice ==\"Cancel\"",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ReplaceDialog",
+                  "$designer": {
+                    "id": "VyG3aZ"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "CancelDialog"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

@@ -6,4 +6,22 @@
 ]
 
 # SendActivity_1Geffy_text()
-- For now , I can only help you on pre-screening candidates 
+- ```For now , I can only help you on pre\-screening candidates
+
+If you want to prescreen candidate you can use following phrases
+
+PreScreening candidate 
+PreScreen candidate 
+Screening  candidate
+preliminary test
+Exam 
+skill check for candidate ```
+# ChoiceInput_Prompt_sVNFKt()
+[Activity
+    Text = ${ChoiceInput_Prompt_sVNFKt_text()}
+]
+
+# ChoiceInput_Prompt_sVNFKt_text()
+- ```Please select one of the  below options
+
+```

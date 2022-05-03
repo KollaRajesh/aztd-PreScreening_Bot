@@ -17,6 +17,13 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "byivN9"
+          },
+          "activity": "${SendActivity_byivN9()}"
+        },
+        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
             "id": "Yj3TI9",
@@ -335,9 +342,23 @@
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
+                    "id": "6xAMrp"
+                  },
+                  "activity": "${SendActivity_6xAMrp()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
                     "id": "aAG6UL"
                   },
                   "activity": "${SendActivity_aAG6UL()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "wBTV0p"
+                  },
+                  "activity": "${SendActivity_wBTV0p()}"
                 },
                 {
                   "$kind": "Microsoft.HttpRequest",

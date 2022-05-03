@@ -97,3 +97,30 @@ Required no of questions to correct for pass :${dialog.RequiredCount} ```
 [Activity
     Text = ${SendActivity_jrjDao_text()}
 ]
+
+# SendActivity_byivN9()
+[Activity
+    Text =${2000}
+    type=${"delay"}
+    ]
+
+# SendActivity_byivN9_text()
+- ```[Activity 
+   Type ```
+# SendActivity_wBTV0p()
+ [Activity
+    Text =${8000}
+    type=${"delay"}
+    ]
+
+# SendActivity_6xAMrp()
+[Activity
+    Text = ${SendActivity_6xAMrp_text()}
+]
+
+# SendActivity_6xAMrp_text()
+- ```[Activity
+    Text =${3000}
+    type=${"delay"}
+    ]
+```
