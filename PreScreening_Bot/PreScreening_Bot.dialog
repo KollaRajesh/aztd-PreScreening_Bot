@@ -127,32 +127,35 @@
       "intent": "test",
       "actions": [
         {
-          "$kind": "Microsoft.SetProperties",
+          "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "3lMuvA"
+            "id": "JU22o3"
           },
-          "assignments": [
-            {
-              "property": "user.CandidateCoreSkill",
-              "value": ".NET"
-            },
-            {
-              "property": "user.CandidateYearsOfExperience",
-              "value": "4"
-            },
-            {
-              "value": "https://prod-25.eastus.logic.azure.com:443/workflows/9ad24d33af934625ac5b0b7a33cc7703/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=oxHBV3FSYo58SEmqxUv8Rmm7QPwa4DLPG2urgcCy3As",
-              "property": "user.InterviewQnAConnector"
-            }
-          ]
+          "activity": "${SendActivity_JU22o3()}"
         },
         {
-          "$kind": "Microsoft.BeginDialog",
+          "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "DYtUDs"
+            "id": "vEP9NH"
           },
-          "activityProcessed": true,
-          "dialog": "StartPreScreening"
+          "activity": "${SendActivity_vEP9NH()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "bhsUm9",
+        "name": "Hi"
+      },
+      "intent": "Hi",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "UC1rKS"
+          },
+          "activity": "${SendActivity_UC1rKS()}"
         }
       ]
     }
@@ -177,6 +180,10 @@
       {
         "intent": "test",
         "pattern": "test"
+      },
+      {
+        "intent": "Hi",
+        "pattern": "Hi|Hello|Are you there?|Oyi|Hai"
       }
     ]
   }

@@ -72,7 +72,7 @@
               "$designer": {
                 "id": "7avlGs"
               },
-              "condition": "==dialog.HelpChoice ==\"Cancel\"",
+              "condition": "=(dialog.HelpChoice ==\"Cancel\")",
               "actions": [
                 {
                   "$kind": "Microsoft.ReplaceDialog",

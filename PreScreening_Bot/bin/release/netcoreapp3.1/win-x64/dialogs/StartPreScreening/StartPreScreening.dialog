@@ -312,13 +312,6 @@
                       },
                       "property": "dialog.TestResult",
                       "value": "Pass"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "QIsdL1"
-                      },
-                      "activity": "${SendActivity_QIsdL1()}"
                     }
                   ],
                   "elseActions": [
@@ -329,13 +322,6 @@
                       },
                       "property": "dialog.TestResult",
                       "value": "Fail"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "0MZsZt"
-                      },
-                      "activity": "${SendActivity_0MZsZt()}"
                     }
                   ]
                 },
