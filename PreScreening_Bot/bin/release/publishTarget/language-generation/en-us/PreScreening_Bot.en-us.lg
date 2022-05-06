@@ -27,7 +27,7 @@ I am only trianed on pre\-screening candidates```
 
  I’m a virtual agent. 
 
-I can help with pre\-screening candidates 
+I can help in pre\-screening candidates 
 ```
 # SendActivity_vEP9NH()
 [Activity
@@ -306,3 +306,11 @@ ${user.CandidateFirstName} is moved to next round  in the interview process
 
 # SendActivity_q4WoRr_text()
 - $confirmation
+# ChoiceInput_Prompt_ZbUQOn_text()
+- ```Please select one of the  below options
+
+```
+# ChoiceInput_Prompt_ZbUQOn()
+[Activity
+    Text = ${ChoiceInput_Prompt_ZbUQOn_text()}
+]

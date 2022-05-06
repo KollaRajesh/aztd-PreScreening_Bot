@@ -8,7 +8,7 @@
 ]
 
 # ConfirmInput_Prompt_4UKQre_text()
-- ```${user.RecruiterFirstName},
+- ```${user.RecruiterFirstName} ${user.RecruiterLastName},
 
 Please ask ${user.CandidateFirstName}  questions  and choose answer based  on ${user.CandidateFirstName}  ${user.dialog.CandidateLastName}'s response over phone
 

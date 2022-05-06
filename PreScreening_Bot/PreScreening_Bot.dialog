@@ -206,6 +206,56 @@
             "id": "UC1rKS"
           },
           "activity": "${SendActivity_UC1rKS()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "ZbUQOn"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${ChoiceInput_Prompt_ZbUQOn()}",
+          "property": "dialog.Choice",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "style": "heroCard",
+          "choices": [
+            "Pre-screening Candidate"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "CN9Spz"
+          },
+          "condition": "=(dialog.Choice ==\"Pre-screening Candidate\")",
+          "actions": [
+            {
+              "$kind": "Microsoft.ReplaceDialog",
+              "$designer": {
+                "id": "eXve1e"
+              },
+              "activityProcessed": true,
+              "dialog": "BeginPreScreeningProcess"
+            }
+          ],
+          "elseActions": []
+        },
+        {
+          "$kind": "Microsoft.EndTurn",
+          "$designer": {
+            "id": "4qmE2b"
+          }
         }
       ]
     },
