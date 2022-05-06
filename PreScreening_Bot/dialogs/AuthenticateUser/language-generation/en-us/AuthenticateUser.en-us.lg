@@ -1,0 +1,52 @@
+[import](common.lg)
+
+# SendActivity_W2aFCR_attachment_sP4IPl()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Authentication successful!",
+      "weight": "bolder",
+      "isSubtle": false,
+        "color": "Good"
+    }
+  ]
+}```
+# SendActivity_W2aFCR()
+[Activity
+    Attachments = ${json(SendActivity_W2aFCR_attachment_sP4IPl())}
+]
+
+# ConfirmInput_Prompt_QTkLQs_text()
+- Can you proceed with screening candidate!
+# ConfirmInput_Prompt_QTkLQs()
+[Activity
+    Text = ${ConfirmInput_Prompt_QTkLQs_text()}
+]
+
+# SendActivity_rS7YgF_attachment_sP4IPl()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Authentication failed!",
+      "weight": "bolder",
+      "isSubtle": false,
+        "color": "Attention"
+    }
+  ]
+}```
+# SendActivity_rS7YgF()
+[Activity
+    Attachments = ${json(SendActivity_rS7YgF_attachment_sP4IPl())}
+]

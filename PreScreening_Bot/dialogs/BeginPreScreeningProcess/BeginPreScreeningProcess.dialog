@@ -68,6 +68,9 @@
     }
   ],
   "generator": "BeginPreScreeningProcess.lg",
-  "recognizer": "BeginPreScreeningProcess.lu.qna",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
   "id": "BeginPreScreeningProcess"
 }

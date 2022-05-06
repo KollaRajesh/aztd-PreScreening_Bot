@@ -75,6 +75,14 @@
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
+            "id": "7DgQp1"
+          },
+          "activityProcessed": true,
+          "dialog": "AuthenticateUser"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
             "id": "mKu53Z"
           },
           "activityProcessed": true,
@@ -127,6 +135,35 @@
       "intent": "test",
       "actions": [
         {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "v6qKIU"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${ConfirmInput_Prompt_v6qKIU()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
+          },
+          "property": "$confirmation",
+          "outputFormat": "=this.value"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "q4WoRr"
+          },
+          "activity": "${SendActivity_q4WoRr()}"
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
             "id": "JU22o3"
@@ -139,6 +176,19 @@
             "id": "vEP9NH"
           },
           "activity": "${SendActivity_vEP9NH()}"
+        },
+        {
+          "$kind": "Microsoft.OAuthInput",
+          "$designer": {
+            "id": "iJct3l"
+          },
+          "timeout": 900000,
+          "property": "turn.token",
+          "maxTurnCount": 3,
+          "allowInterruptions": true,
+          "connectionName": "GitHubLogin",
+          "text": "Please log in ",
+          "title": "Log in  to Git hub"
         }
       ]
     },
@@ -156,6 +206,30 @@
             "id": "UC1rKS"
           },
           "activity": "${SendActivity_UC1rKS()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "hUVePm",
+        "name": "whoami"
+      },
+      "intent": "whoami",
+      "actions": [
+        {
+          "$kind": "Microsoft.ReplaceDialog",
+          "$designer": {
+            "id": "6BJxk6"
+          },
+          "activityProcessed": true,
+          "dialog": "AuthenticateUser"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "lFWioZ"
+          }
         }
       ]
     }
@@ -184,6 +258,10 @@
       {
         "intent": "Hi",
         "pattern": "Hi|Hello|Are you there?|Oyi|Hai"
+      },
+      {
+        "intent": "whoami",
+        "pattern": "who|who am i|login|authenticate"
       }
     ]
   }

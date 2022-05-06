@@ -292,3 +292,17 @@ ${user.CandidateFirstName} is moved to next round  in the interview process
 	"bleed": true
 }```
 		
+# ConfirmInput_Prompt_v6qKIU()
+[Activity
+    Text = ${ConfirmInput_Prompt_v6qKIU_text()}
+]
+
+# ConfirmInput_Prompt_v6qKIU_text()
+- Can you proceed ?
+# SendActivity_q4WoRr()
+[Activity
+    Text = ${SendActivity_q4WoRr_text()}
+]
+
+# SendActivity_q4WoRr_text()
+- $confirmation

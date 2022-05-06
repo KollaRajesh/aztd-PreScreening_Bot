@@ -1,24 +1,23 @@
 [import](common.lg)
 
-# TextInput_Prompt_FaJFbA_text()
+# TextInput_Prompt_1R4TxU_text()
 - May I know Recruiter's first name
-# TextInput_Prompt_FaJFbA()
+# TextInput_Prompt_1R4TxU()
 [Activity
-    Text = ${TextInput_Prompt_FaJFbA_text()}
+    Text = ${TextInput_Prompt_1R4TxU_text()}
 ]
 
-# TextInput_Prompt_baRTea_text()
+# TextInput_Prompt_lzMu9H_text()
 - May i know ${user.RecruiterFirstName}'s last name?
-# TextInput_Prompt_baRTea()
+# TextInput_Prompt_lzMu9H()
 [Activity
-    Text = ${TextInput_Prompt_baRTea_text()}
+    Text = ${TextInput_Prompt_lzMu9H_text()}
 ]
 
-# SendActivity_NeLkk6()
-[Activity
-    Text = ${SendActivity_NeLkk6_text()}
-]
-
-# SendActivity_NeLkk6_text()
+# SendActivity_nBelDW_text()
 - ```Thank you for providing recruiter details
 Recruiter Name :${user.RecruiterFirstName} ${user.RecruiterLastName}```
+# SendActivity_nBelDW()
+[Activity
+    Text = ${SendActivity_nBelDW_text()}
+]

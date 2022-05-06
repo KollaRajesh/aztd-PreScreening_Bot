@@ -17,43 +17,74 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.TextInput",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "FaJFbA"
+            "id": "6JxRVO"
           },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_FaJFbA()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "property": "user.RecruiterFirstName",
-          "outputFormat": "=trim(this.value)"
-        },
-        {
-          "$kind": "Microsoft.TextInput",
-          "$designer": {
-            "id": "baRTea"
-          },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "prompt": "${TextInput_Prompt_baRTea()}",
-          "property": "user.RecruiterLastName",
-          "outputFormat": "=trim(this.value)"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "NeLkk6"
-          },
-          "activity": "${SendActivity_NeLkk6()}"
+          "condition": "=(user.FullName!=null  && (user.RecruiterFirstName ==null && user.RecruiterLastName==null))",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "9LYuWa"
+              },
+              "assignments": [
+                {
+                  "property": "user.RecruiterFirstName",
+                  "value": "=split(user.FullName, ',')[1]"
+                },
+                {
+                  "property": "user.RecruiterLastName",
+                  "value": "=split(user.FullName, ',')[0]"
+                },
+                {
+                  "property": "user.RecruiterEmail",
+                  "value": "=user.mail"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "1R4TxU"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_1R4TxU()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "property": "user.RecruiterFirstName",
+              "outputFormat": "=trim(this.value)"
+            },
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "lzMu9H"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "prompt": "${TextInput_Prompt_lzMu9H()}",
+              "property": "user.RecruiterLastName",
+              "outputFormat": "=trim(this.value)"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "nBelDW"
+              },
+              "activity": "${SendActivity_nBelDW()}"
+            }
+          ]
         },
         {
           "$kind": "Microsoft.EndDialog",

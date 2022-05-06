@@ -1,0 +1,138 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Tfe04v",
+    "name": "AuthenticateUser",
+    "comment": "Authenticate user "
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "L0YAog"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.OAuthInput",
+          "$designer": {
+            "id": "abFCiH"
+          },
+          "timeout": 900000,
+          "property": "dialog.oauth",
+          "maxTurnCount": 3,
+          "allowInterruptions": true,
+          "connectionName": "GraphAccess",
+          "text": "Please log in ",
+          "title": "Log into Microsoft account"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "wie1RH"
+          },
+          "resultProperty": "dialog.graphResult",
+          "method": "GET",
+          "url": "https://graph.microsoft.com/v1.0/me/",
+          "headers": {
+            "Authorization": "Bearer ${dialog.oauth.token}"
+          },
+          "contentType": "application/json",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "7njzv7"
+          },
+          "condition": "=(dialog.graphResult.content!=null)",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "JqtYTG"
+              },
+              "assignments": [
+                {
+                  "value": "=dialog.graphResult.content.displayName",
+                  "property": "user.FullName"
+                },
+                {
+                  "property": "user.mail",
+                  "value": "=dialog.graphResult.content.mail"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "W2aFCR"
+              },
+              "activity": "${SendActivity_W2aFCR()}"
+            },
+            {
+              "$kind": "Microsoft.ConfirmInput",
+              "$designer": {
+                "id": "QTkLQs"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "prompt": "${ConfirmInput_Prompt_QTkLQs()}",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "property": "dialog.Confirmed"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "IiBZpo"
+              },
+              "actions": [
+                {
+                  "$kind": "Microsoft.ReplaceDialog",
+                  "$designer": {
+                    "id": "XZNExM"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "BeginPreScreeningProcess"
+                }
+              ],
+              "condition": "=dialog.Confirmed"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "rS7YgF"
+              },
+              "activity": "${SendActivity_rS7YgF()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "RFNk5u"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "AuthenticateUser.lg",
+  "recognizer": "AuthenticateUser.lu.qna",
+  "id": "AuthenticateUser"
+}

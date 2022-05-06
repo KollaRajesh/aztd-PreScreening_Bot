@@ -31,7 +31,10 @@
           "defaultValueResponse": "",
           "prompt": "${ConfirmInput_Prompt_jxa6pD()}",
           "choiceOptions": {
-            "includeNumbers": true
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
           },
           "property": "dialog.cancelConfirmed"
         },

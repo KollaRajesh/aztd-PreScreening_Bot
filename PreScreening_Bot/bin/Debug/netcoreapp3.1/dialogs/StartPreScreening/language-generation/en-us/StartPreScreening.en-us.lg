@@ -40,27 +40,6 @@ Would you ready to screen ${user.CandidateFirstName}?```
     Text = ${SendActivity_HRlN58_text()}
 ]
 
-# SendActivity_QIsdL1_text()
-- ```Result of Prescreening Test: ${dialog.TestResult}
-
-${user.CandidateFirstName}  ${user.CandidateLastName} is cleared  screening test. 
-We can considered for next round```
-# SendActivity_QIsdL1()
-[Activity
-    Text = ${SendActivity_QIsdL1_text()}
-]
-
-# SendActivity_0MZsZt_text()
-- ```Result of Prescreening Test: ${dialog.TestResult}
-
-${user.CandidateFirstName}  ${dialog.CandidateLastName} needs to work on improvement  on ${user.CandidateCoreSkill}
-
-```
-# SendActivity_0MZsZt()
-[Activity
-    Text = ${SendActivity_0MZsZt_text()}
-]
-
 # SendActivity_7eSn3R_text()
 - ```Ok ${user.RecruiterFirstName} , No problem .
 
@@ -137,7 +116,7 @@ Required no of questions to correct for pass :${dialog.RequiredCount} ```
 				"id": "acSubCandidateName"
 			}, {
 				"type": "TextBlock",
-				"text": "**Recruiter Name** : Rajesh kolla ",
+				"text": "**Recruiter Name** : ${user.RecruiterFirstName} ${user.RecruiterLastName} ",
 				"wrap": true,
 				"id": "acSubRecruiterName"
 			}, {
