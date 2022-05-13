@@ -136,13 +136,6 @@
               ]
             },
             {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "c1gdW7"
-              },
-              "activity": "${SendActivity_c1gdW7()}"
-            },
-            {
               "$kind": "Microsoft.ConfirmInput",
               "$designer": {
                 "id": "4UKQre"
@@ -405,10 +398,11 @@
           ]
         },
         {
-          "$kind": "Microsoft.EndDialog",
+          "$kind": "Microsoft.CancelAllDialogs",
           "$designer": {
-            "id": "5Kks0C"
-          }
+            "id": "IfySVT"
+          },
+          "activityProcessed": true
         }
       ]
     }

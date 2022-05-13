@@ -28,7 +28,6 @@
           "allowInterruptions": false,
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
-          "defaultValueResponse": "",
           "prompt": "${ConfirmInput_Prompt_jxa6pD()}",
           "choiceOptions": {
             "includeNumbers": true,
@@ -51,6 +50,50 @@
                 "id": "AM043j"
               },
               "activity": "${SendActivity_AM043j()}"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "ysh55R"
+              },
+              "assignments": [
+                {
+                  "property": "user.FullName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.mail",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateFirstName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateLastName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateYearsOfExperience",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateCoreSkill",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.RecruiterFirstName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.RecruiterLastName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.RecruiterEmail",
+                  "value": "=null"
+                }
+              ]
             },
             {
               "$kind": "Microsoft.CancelAllDialogs",

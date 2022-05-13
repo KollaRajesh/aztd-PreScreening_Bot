@@ -1,17 +1,11 @@
 [import](common.lg)
 
-# SendActivity_c1gdW7_text()
-- I will share 5 multiple choice questions in ${user.CandidateCoreSkill} .
-# SendActivity_c1gdW7()
-[Activity
-    Text = ${SendActivity_c1gdW7_text()}
-]
-
 # ConfirmInput_Prompt_4UKQre_text()
 - ```${user.RecruiterFirstName} ${user.RecruiterLastName},
 
-Please ask ${user.CandidateFirstName}  questions  and choose answer based  on ${user.CandidateFirstName}  ${user.dialog.CandidateLastName}'s response over phone
+I will share 5 multiple choice questions in ${user.CandidateCoreSkill}.
 
+So Please ask questions and choose answer based  on ${user.CandidateFirstName}  ${user.CandidateLastName}'s response over phone.
 
 Would you ready to screen ${user.CandidateFirstName}?```
 # ConfirmInput_Prompt_4UKQre()

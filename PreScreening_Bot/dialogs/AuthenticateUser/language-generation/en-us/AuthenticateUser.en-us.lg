@@ -23,7 +23,7 @@
 ]
 
 # ConfirmInput_Prompt_QTkLQs_text()
-- Can you proceed with screening candidate!
+- Are you continue with screening candidate!
 # ConfirmInput_Prompt_QTkLQs()
 [Activity
     Text = ${ConfirmInput_Prompt_QTkLQs_text()}

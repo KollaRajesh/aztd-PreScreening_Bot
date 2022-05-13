@@ -48,10 +48,10 @@
 if you want to continue , you can use following phrases 
 
 ```
-- Sure, I'll cancel
-- Okay, I will stop
+- Sure, I'll cancel it
+- Okay, I will stop all active operations
 - Got it , I'll stop here
-- No Problem , I will stop
+- No Problem , I will stop all active operations
 - Alright , I will cancel it
 # SendActivity_IP1JsE()
 [Activity

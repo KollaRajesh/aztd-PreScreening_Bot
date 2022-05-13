@@ -43,7 +43,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "value": "dialog.foreach.value"
         }
       ]
     },
@@ -87,6 +88,50 @@
           },
           "activityProcessed": true,
           "dialog": "BeginPreScreeningProcess"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "dSW68w"
+          },
+          "assignments": [
+            {
+              "property": "user.FullName",
+              "value": "=null"
+            },
+            {
+              "property": "user.mail",
+              "value": "=null"
+            },
+            {
+              "property": "user.CandidateFirstName",
+              "value": "=null"
+            },
+            {
+              "property": "user.CandidateLastName",
+              "value": "=null"
+            },
+            {
+              "property": "user.CandidateYearsOfExperience",
+              "value": "=null"
+            },
+            {
+              "property": "user.CandidateCoreSkill",
+              "value": "=null"
+            },
+            {
+              "property": "user.RecruiterFirstName",
+              "value": "=null"
+            },
+            {
+              "property": "user.RecruiterLastName",
+              "value": "=null"
+            },
+            {
+              "property": "user.RecruiterEmail",
+              "value": "=null"
+            }
+          ]
         }
       ]
     },
@@ -134,6 +179,13 @@
       },
       "intent": "test",
       "actions": [
+        {
+          "$kind": "Microsoft.SignOutUser",
+          "$designer": {
+            "id": "YX2gzr"
+          },
+          "userId": "=user.id"
+        },
         {
           "$kind": "Microsoft.ConfirmInput",
           "$designer": {
@@ -206,6 +258,112 @@
             "id": "UC1rKS"
           },
           "activity": "${SendActivity_UC1rKS()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "ZbUQOn"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${ChoiceInput_Prompt_ZbUQOn()}",
+          "property": "dialog.Choice",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "style": "heroCard",
+          "choices": [
+            "Pre-screening Candidate"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          },
+          "validations": []
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "CN9Spz"
+          },
+          "condition": "=(dialog.Choice ==\"Pre-screening Candidate\")",
+          "actions": [
+            {
+              "$kind": "Microsoft.ReplaceDialog",
+              "$designer": {
+                "id": "eXve1e"
+              },
+              "activityProcessed": true,
+              "dialog": "BeginPreScreeningProcess"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "FfMHb1"
+              },
+              "assignments": [
+                {
+                  "property": "user.FullName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.mail",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateFirstName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateLastName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateYearsOfExperience",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateCoreSkill",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.RecruiterFirstName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.RecruiterLastName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.RecruiterEmail",
+                  "value": "=null"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.CancelDialog",
+              "$designer": {
+                "id": "ZJhC7m"
+              },
+              "activityProcessed": true
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.CancelDialog",
+          "$designer": {
+            "id": "A2U9Sw"
+          },
+          "activityProcessed": true
         }
       ]
     },
@@ -230,6 +388,37 @@
           "$designer": {
             "id": "lFWioZ"
           }
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "SZeZEM",
+        "name": "UserSignout"
+      },
+      "intent": "UserSignout",
+      "actions": [
+        {
+          "$kind": "Microsoft.SignOutUser",
+          "$designer": {
+            "id": "U92YMJ"
+          },
+          "userId": "=user.id",
+          "connectionName": "GraphAccess"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "GTRhrr"
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "BMMewy"
+          },
+          "activity": "${SendActivity_BMMewy()}"
         }
       ]
     }
@@ -262,6 +451,10 @@
       {
         "intent": "whoami",
         "pattern": "who|who am i|login|authenticate"
+      },
+      {
+        "intent": "UserSignout",
+        "pattern": "signout|logout }sign out|log out |log off|logoff"
       }
     ]
   }
