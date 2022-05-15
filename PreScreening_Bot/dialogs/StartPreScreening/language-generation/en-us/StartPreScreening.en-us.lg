@@ -14,7 +14,7 @@ Would you ready to screen ${user.CandidateFirstName}?```
 ]
 
 # ChoiceInput_Prompt_nrqbXp_text()
-- ${dialog.CurrentQuestion}
+- ${dialog.QuestionNumber}.${trim(dialog.CurrentQuestion)}
 # ChoiceInput_Prompt_nrqbXp()
 [Activity
     Text = ${ChoiceInput_Prompt_nrqbXp_text()}
@@ -302,7 +302,7 @@ Required no of questions to correct for pass :${dialog.RequiredCount} ```
                         {
                             "type": "TextBlock",
                             "text": "${dialog.TestResult}",
-                            "color": "good",
+                            "color": "${dialog.TestResultColor}",
                             "weight": "Bolder"
                         }
                     ],
@@ -319,11 +319,8 @@ Required no of questions to correct for pass :${dialog.RequiredCount} ```
 			"width": "auto",
 			"items": [{
 		"type": "TextBlock",
-		"text": " 
-Congratulations ${user.CandidateFirstName} ${user.CandidateLastName}! 
-${user.CandidateFirstName} is moved to next round  in the interview process
-",
-		"color": "good",
+		"text": " ${dialog.TestResultDescription}",
+		"color": "${dialog.TestResultColor}",
 		"wrap": true,
 		"id": "acResultDescriptionArea"
 	}]

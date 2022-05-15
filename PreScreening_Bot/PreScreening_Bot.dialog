@@ -180,6 +180,14 @@
       "intent": "test",
       "actions": [
         {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "zrcKKv"
+          },
+          "activityProcessed": true,
+          "dialog": "BeginPreScreeningProcess"
+        },
+        {
           "$kind": "Microsoft.SignOutUser",
           "$designer": {
             "id": "YX2gzr"

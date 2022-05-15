@@ -204,7 +204,7 @@
                         },
                         {
                           "property": "dialog.QuestionNumber",
-                          "value": "=add(dialog.foreach.index,1)"
+                          "value": "=add(dialog.foreach.index, 1)"
                         }
                       ]
                     },

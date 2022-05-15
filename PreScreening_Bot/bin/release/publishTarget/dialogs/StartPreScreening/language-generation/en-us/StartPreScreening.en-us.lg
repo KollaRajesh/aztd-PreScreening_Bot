@@ -14,7 +14,7 @@ Would you ready to screen ${user.CandidateFirstName}?```
 ]
 
 # ChoiceInput_Prompt_nrqbXp_text()
-- ${dialog.CurrentQuestion}
+- ${dialog.QuestionNumber}${trim(dialog.CurrentQuestion)}
 # ChoiceInput_Prompt_nrqbXp()
 [Activity
     Text = ${ChoiceInput_Prompt_nrqbXp_text()}

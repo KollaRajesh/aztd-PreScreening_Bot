@@ -204,7 +204,7 @@
                         },
                         {
                           "property": "dialog.QuestionNumber",
-                          "value": "=add(dialog.foreach.index,1)"
+                          "value": "=add(dialog.foreach.index, 1)"
                         }
                       ]
                     },
@@ -299,6 +299,26 @@
                   "condition": "=(dialog.NoOfCorrectAnswers >=dialog.RequiredCount)",
                   "actions": [
                     {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "Svi6u9"
+                      },
+                      "assignments": [
+                        {
+                          "property": "dialog.TestResult",
+                          "value": "Pass"
+                        },
+                        {
+                          "property": "dialog.TestResultColor",
+                          "value": "Good"
+                        },
+                        {
+                          "property": "dialog.TestResultDescription",
+                          "value": "=concat(\"Congratulations, dialog.CandidateFirstName ,\" \", dialog.CandidateLastName , dialog.CandidateFirstName ,\" is moved to next round in the interview process.\" )"
+                        }
+                      ]
+                    },
+                    {
                       "$kind": "Microsoft.SetProperty",
                       "$designer": {
                         "id": "NRoQ4P"
@@ -308,6 +328,26 @@
                     }
                   ],
                   "elseActions": [
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "73nyT4"
+                      },
+                      "assignments": [
+                        {
+                          "property": "dialog.TestResult",
+                          "value": "Fail"
+                        },
+                        {
+                          "property": "dialog.TestResultColor",
+                          "value": "attention"
+                        },
+                        {
+                          "property": "dialog.TestResultDescription",
+                          "value": "=concat(\"Better luck in your search \", dialog.CandidateFirstName ,\" ! \", dialog.CandidateLastName , dialog.CandidateFirstName ,\" needs to improve \", dialog.CandidateCoreSkill,\" skills\" )"
+                        }
+                      ]
+                    },
                     {
                       "$kind": "Microsoft.SetProperty",
                       "$designer": {

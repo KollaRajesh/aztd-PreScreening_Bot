@@ -180,6 +180,14 @@
       "intent": "test",
       "actions": [
         {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "zrcKKv"
+          },
+          "activityProcessed": true,
+          "dialog": "BeginPreScreeningProcess"
+        },
+        {
           "$kind": "Microsoft.SignOutUser",
           "$designer": {
             "id": "YX2gzr"
@@ -400,25 +408,37 @@
       "intent": "UserSignout",
       "actions": [
         {
-          "$kind": "Microsoft.SignOutUser",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "U92YMJ"
+            "id": "B1g1mZ"
           },
-          "userId": "=user.id",
-          "connectionName": "GraphAccess"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "GTRhrr"
-          }
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "BMMewy"
-          },
-          "activity": "${SendActivity_BMMewy()}"
+          "condition": "=user.FullName !=null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SignOutUser",
+              "$designer": {
+                "id": "e7wLcC"
+              },
+              "userId": "=user.id",
+              "connectionName": "GraphAccess"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "R9aYTu"
+              },
+              "activity": "${SendActivity_R9aYTu()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "xvIcVX"
+              },
+              "activity": "${SendActivity_xvIcVX()}"
+            }
+          ]
         }
       ]
     }
