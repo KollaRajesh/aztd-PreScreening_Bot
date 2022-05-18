@@ -180,6 +180,41 @@
       "intent": "test",
       "actions": [
         {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "lU12Pt"
+          },
+          "assignments": [
+            {
+              "property": "dialog.TestResult",
+              "value": "Pass"
+            },
+            {
+              "property": "dialog.TestResultColor",
+              "value": "Good"
+            },
+            {
+              "property": "dialog.TestResultDescription",
+              "value": "=concat(\"Great, \", dialog.CandidateFirstName ,\" \", dialog.CandidateLastName ,  \" has passed the initial screening. you may proceed with scheduling the next round of interview!\" )"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "UtmnZh"
+          },
+          "activity": "${SendActivity_UtmnZh()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "zrcKKv"
+          },
+          "activityProcessed": true,
+          "dialog": "BeginPreScreeningProcess"
+        },
+        {
           "$kind": "Microsoft.SignOutUser",
           "$designer": {
             "id": "YX2gzr"
@@ -255,9 +290,9 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "UC1rKS"
+            "id": "6gkBnF"
           },
-          "activity": "${SendActivity_UC1rKS()}"
+          "activity": "${SendActivity_6gkBnF()}"
         },
         {
           "$kind": "Microsoft.ChoiceInput",
@@ -281,7 +316,7 @@
           },
           "style": "heroCard",
           "choices": [
-            "Pre-screening Candidate"
+            "PreScreen Candidate"
           ],
           "recognizerOptions": {
             "recognizeOrdinals": true
@@ -293,7 +328,7 @@
           "$designer": {
             "id": "CN9Spz"
           },
-          "condition": "=(dialog.Choice ==\"Pre-screening Candidate\")",
+          "condition": "=(dialog.Choice ==\"PreScreen Candidate\")",
           "actions": [
             {
               "$kind": "Microsoft.ReplaceDialog",

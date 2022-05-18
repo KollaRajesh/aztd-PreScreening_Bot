@@ -1,8 +1,2 @@
 [import](common.lg)
 
-# SendActivity_9RRfDa_text()
-- Okay sure!
-# SendActivity_9RRfDa()
-[Activity
-    Text = ${SendActivity_9RRfDa_text()}
-]

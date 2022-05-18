@@ -74,43 +74,12 @@
               "activity": "${SendActivity_W2aFCR()}"
             },
             {
-              "$kind": "Microsoft.ConfirmInput",
+              "$kind": "Microsoft.ReplaceDialog",
               "$designer": {
-                "id": "QTkLQs"
+                "id": "JXzbXK"
               },
-              "defaultLocale": "en-us",
-              "disabled": false,
-              "maxTurnCount": 3,
-              "alwaysPrompt": false,
-              "allowInterruptions": false,
-              "unrecognizedPrompt": "",
-              "invalidPrompt": "",
-              "defaultValueResponse": "",
-              "prompt": "${ConfirmInput_Prompt_QTkLQs()}",
-              "choiceOptions": {
-                "includeNumbers": true,
-                "inlineOrMore": ", or ",
-                "inlineOr": " or ",
-                "inlineSeparator": ", "
-              },
-              "property": "dialog.Confirmed"
-            },
-            {
-              "$kind": "Microsoft.IfCondition",
-              "$designer": {
-                "id": "IiBZpo"
-              },
-              "actions": [
-                {
-                  "$kind": "Microsoft.ReplaceDialog",
-                  "$designer": {
-                    "id": "XZNExM"
-                  },
-                  "activityProcessed": true,
-                  "dialog": "BeginPreScreeningProcess"
-                }
-              ],
-              "condition": "=dialog.Confirmed"
+              "activityProcessed": true,
+              "dialog": "BeginPreScreeningProcess"
             }
           ],
           "elseActions": [

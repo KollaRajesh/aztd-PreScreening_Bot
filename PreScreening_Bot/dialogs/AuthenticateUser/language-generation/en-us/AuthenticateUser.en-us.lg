@@ -22,13 +22,6 @@
     Attachments = ${json(SendActivity_W2aFCR_attachment_sP4IPl())}
 ]
 
-# ConfirmInput_Prompt_QTkLQs_text()
-- Are you continue with screening candidate!
-# ConfirmInput_Prompt_QTkLQs()
-[Activity
-    Text = ${ConfirmInput_Prompt_QTkLQs_text()}
-]
-
 # SendActivity_rS7YgF_attachment_sP4IPl()
 > To learn more Adaptive Cards format, read the documentation at
 > https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots

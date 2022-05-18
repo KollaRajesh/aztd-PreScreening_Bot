@@ -1,23 +1,34 @@
 [import](common.lg)
 
-# TextInput_Prompt_1R4TxU_text()
+
+# TextInput_Prompt_Md4bB1_text()
 - May I know Recruiter's first name
-# TextInput_Prompt_1R4TxU()
+# TextInput_Prompt_Md4bB1()
 [Activity
-    Text = ${TextInput_Prompt_1R4TxU_text()}
+    Text = ${TextInput_Prompt_Md4bB1_text()}
 ]
 
-# TextInput_Prompt_lzMu9H_text()
-- May i know ${user.RecruiterFirstName}'s last name?
-# TextInput_Prompt_lzMu9H()
+# TextInput_Prompt_y6dQNj_text()
+- May I know ${user.RecruiterFirstName}'s last name?
+# TextInput_Prompt_y6dQNj()
 [Activity
-    Text = ${TextInput_Prompt_lzMu9H_text()}
+    Text = ${TextInput_Prompt_y6dQNj_text()}
 ]
 
-# SendActivity_nBelDW_text()
+# SendActivity_CqK7yI_text()
 - ```Thank you for providing recruiter details
 Recruiter Name :${user.RecruiterFirstName} ${user.RecruiterLastName}```
-# SendActivity_nBelDW()
+# SendActivity_CqK7yI()
 [Activity
-    Text = ${SendActivity_nBelDW_text()}
+    Text = ${SendActivity_CqK7yI_text()}
 ]
+
+# SendActivity_d3XC9v()
+[Activity
+    Text = ${SendActivity_d3XC9v_text()}
+]
+
+# SendActivity_d3XC9v_text()
+- ```Recruiter details captured from current Microsoft account 
+
+Recruiter Name : ${user.RecruiterFirstName} ${user.RecruiterLastName}```

@@ -6,7 +6,7 @@
 ]
 
 # SendActivity_Greeting_text()
-- ```Hi! I’m a virtual agent. I can help with pre\-screening candidates 
+- ```I'm a virtual assistant and I can help you with prescreen candidates.
 ```
 # SendActivity_DidNotUnderstand()
 [Activity
@@ -17,18 +17,6 @@
 - ```Sorry, I  am afraid . I can't help you on that 
 
 I am only trianed on pre\-screening candidates```
-# SendActivity_UC1rKS()
-[Activity
-    Text = ${SendActivity_UC1rKS_text()}
-]
-
-# SendActivity_UC1rKS_text()
-- ```Hi!
-
- I’m a virtual agent. 
-
-I can help in pre\-screening candidates 
-```
 # SendActivity_vEP9NH()
 [Activity
     Text = ${SendActivity_vEP9NH_text()}
@@ -307,7 +295,8 @@ ${user.CandidateFirstName} is moved to next round  in the interview process
 # SendActivity_q4WoRr_text()
 - $confirmation
 # ChoiceInput_Prompt_ZbUQOn_text()
-- ```if you want to pre\-screening candiddate select below option
+- ```
+To start Prescreen candidate, click on below option
 
 ```
 # ChoiceInput_Prompt_ZbUQOn()
@@ -358,3 +347,20 @@ ${user.CandidateFirstName} is moved to next round  in the interview process
 [Activity
     Attachments = ${json(SendActivity_xvIcVX_attachment_NgLOjk())}
 ]
+
+# SendActivity_UtmnZh()
+[Activity
+    Text = ${SendActivity_UtmnZh_text()}
+]
+
+# SendActivity_UtmnZh_text()
+- ${dialog.TestResultDescription}
+# SendActivity_6gkBnF()
+[Activity
+    Text = ${SendActivity_6gkBnF_text()}
+]
+
+# SendActivity_6gkBnF_text()
+- ```Hi,
+
+I'm a virtual assistant and I can help you with pre\-screen candidates.```

@@ -1,20 +1,12 @@
 [import](common.lg)
 
-# ConfirmInput_Prompt_4UKQre_text()
-- ```${user.RecruiterFirstName} ${user.RecruiterLastName},
-
-I will share 5 multiple choice questions in ${user.CandidateCoreSkill}.
-
-So Please ask questions and choose answer based  on ${user.CandidateFirstName}  ${user.CandidateLastName}'s response over phone.
-
-Would you ready to screen ${user.CandidateFirstName}?```
 # ConfirmInput_Prompt_4UKQre()
 [Activity
     Text = ${ConfirmInput_Prompt_4UKQre_text()}
 ]
 
 # ChoiceInput_Prompt_nrqbXp_text()
-- ${dialog.QuestionNumber}${trim(dialog.CurrentQuestion)}
+- ${dialog.QuestionNumber}.${trim(dialog.CurrentQuestion)}
 # ChoiceInput_Prompt_nrqbXp()
 [Activity
     Text = ${ChoiceInput_Prompt_nrqbXp_text()}
@@ -50,14 +42,6 @@ Once you are ready . let's do prescreening ${user.CandidateFirstName}```
 
 # SendActivity_TAJSKf_text()
 - ${dialog.result_api_response.content.Response}
-# SendActivity_jrjDao_text()
-- ```Total no of questions are ${dialog.TotalNoOfQuestions}
-Required no of questions to correct for pass :${dialog.RequiredCount} ```
-# SendActivity_jrjDao()
-[Activity
-    Text = ${SendActivity_jrjDao_text()}
-]
-
 # SendActivity_byivN9()
 [Activity
     Text =${2000}
@@ -73,18 +57,36 @@ Required no of questions to correct for pass :${dialog.RequiredCount} ```
     type=${"delay"}
     ]
 
-# SendActivity_6xAMrp()
- [Activity
-    Text =${1000}
-    type=${"delay"}
-    ]
-
-# SendActivity_aAG6UL()
+# SendActivity_xHgE5k()
 [Activity
-    Attachments = ${json(SendActivity_aAG6UL_attachment_4tHC94())}
+    Text = ${SendActivity_xHgE5k_text()}
 ]
 
-# SendActivity_aAG6UL_attachment_4tHC94()
+# SendActivity_xHgE5k_text()
+- ```${user.RecruiterFirstName},
+
+I will share multiple choice questions in ${user.CandidateCoreSkill}.
+```
+# SendActivity_5FybUl()
+[Activity
+    Text = ${SendActivity_5FybUl_text()}
+]
+
+# SendActivity_5FybUl_text()
+- ```Please ask  these  multiple choice  questions and choose answer based  on ${user.CandidateFirstName}  ${user.CandidateLastName}'s response over phone.
+```
+# ConfirmInput_Prompt_4UKQre_text()
+- Are you  ready to screen ${dialog.CandidateFirstName} ${dialog.CandidateLastName}?
+# SendActivity_fj508M_text()
+- ```Total no of questions are ${dialog.TotalNoOfQuestions}
+
+Minimum ${dialog.RequiredCount} correct answers are expected to schedule the next round```
+# SendActivity_fj508M()
+[Activity
+    Text = ${SendActivity_fj508M_text()}
+]
+
+# SendActivity_WsLNDN_attachment_4tHC94()
 > To learn more Adaptive Cards format, read the documentation at
 > https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
 - ```{
@@ -302,7 +304,7 @@ Required no of questions to correct for pass :${dialog.RequiredCount} ```
                         {
                             "type": "TextBlock",
                             "text": "${dialog.TestResult}",
-                            "color": "good",
+                            "color": "${dialog.TestResultColor}",
                             "weight": "Bolder"
                         }
                     ],
@@ -319,11 +321,8 @@ Required no of questions to correct for pass :${dialog.RequiredCount} ```
 			"width": "auto",
 			"items": [{
 		"type": "TextBlock",
-		"text": " 
-Congratulations ${user.CandidateFirstName} ${user.CandidateLastName}! 
-${user.CandidateFirstName} is moved to next round  in the interview process
-",
-		"color": "good",
+		"text": "Great, ${user.CandidateFirstName} ${user.CandidateLastName} has passed the initial screening. you may proceed with scheduling the next round of interview!.",
+		"color": "${dialog.TestResultColor}",
 		"wrap": true,
 		"id": "acResultDescriptionArea"
 	}]
@@ -334,3 +333,259 @@ ${user.CandidateFirstName} is moved to next round  in the interview process
 	"bleed": true
 }```
 		
+# SendActivity_WsLNDN()
+[Activity
+    Attachments = ${json(SendActivity_WsLNDN_attachment_4tHC94())}
+]
+
+# SendActivity_GMHfni_attachment_4tHC94()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```{
+	"$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+	"type": "AdaptiveCard",
+	"version": "1.0",
+	"body": [{
+		"type": "TextBlock",
+		"text": "Summary of Pre-Screening Test",
+		"weight": "bolder",
+		"size": "large",
+		"id": "acTitle"
+	}, {
+		"type": "ColumnSet",
+                 "separator": true,
+		"columns": [{
+			"type": "Column",
+			"width": "auto",
+			"items": [{
+				"type": "TextBlock",
+				"text": "**Candidate Name** :  ${user.CandidateFirstName} ${user.CandidateLastName}",
+				"wrap": true,
+				"id": "acSubCandidateName"
+			}, {
+				"type": "TextBlock",
+				"text": "**Recruiter Name** : ${user.RecruiterFirstName} ${user.RecruiterLastName} ",
+				"wrap": true,
+				"id": "acSubRecruiterName"
+			}, {
+				"type": "TextBlock",
+				"text": "**Assessment  on** :  ${convertFromUTC(utcNow(), 'Central Standard Time','MMM-dd-yyyy hh:mm')}   \n ",
+				"wrap": true,
+				"id": "acSubAssessmentOn"
+			}
+
+]
+		}]
+	}, {
+            "type": "ColumnSet",
+            "spacing": "Small",
+              "separator": true,
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Core Technology",
+                            "color": "Default",
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "style": "emphasis",
+                    "spacing": "None"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${user.CandidateCoreSkill}",
+                            "color": "Default"
+                        }
+                    ],
+                    "width": "stretch",
+                    "style": "emphasis"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "Small",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Years of Exp",
+                            "color": "Default",
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "style": "emphasis"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${user.CandidateYearsOfExperience}",
+                            "color": "Default"
+                        }
+                    ],
+                    "width": "stretch",
+                    "style": "emphasis"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "Small",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Total no of questions:",
+                            "color": "Default",
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "style": "emphasis"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${dialog.TotalNoOfQuestions}",
+                            "color": "Default"
+                        }
+                    ],
+                    "width": "stretch",
+                    "style": "emphasis"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "Small",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "No of correct answers:",
+                            "color": "Default",
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "style": "emphasis"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${dialog.NoOfCorrectAnswers}",
+                            "color": "Good"
+                        }
+                    ],
+                    "width": "stretch",
+                    "style": "emphasis"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "Small",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "No of wrong answers:",
+                            "color": "Default",
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "style": "emphasis"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${dialog.NoOfWrongAnswers}",
+                            "color": "Attention"
+                        }
+                    ],
+                    "width": "stretch",
+                    "style": "emphasis"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "Small",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Result:",
+                            "color": "Default",
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "style": "emphasis"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${dialog.TestResult}",
+                            "color": "${dialog.TestResultColor}",
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "width": "stretch",
+                    "style": "emphasis"
+                }
+            ]
+        },
+{
+		"type": "ColumnSet",
+                 "separator": true,
+		"columns": [{
+			"type": "Column",
+			"width": "auto",
+			"items": [{
+		"type": "TextBlock",
+		"text": " Unfortunately, ${user.CandidateFirstName} ${user.CandidateLastName} didn't pass the initial screening.",
+		"color": "${dialog.TestResultColor}",
+		"wrap": true,
+		"id": "acResultDescriptionArea"
+	}]
+		}]
+	}
+
+],
+	"bleed": true
+}```
+		
+# SendActivity_GMHfni()
+[Activity
+    Attachments = ${json(SendActivity_GMHfni_attachment_4tHC94())}
+]

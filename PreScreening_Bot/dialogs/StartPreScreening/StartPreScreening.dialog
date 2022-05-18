@@ -58,12 +58,12 @@
                   "value": "=dialog.api_response.content"
                 },
                 {
-                  "property": "dialog.sample",
+                  "property": "dialog.QnAObj1",
                   "value": {
                     "TotalNoOfQuestions": 5,
                     "Questions": [
                       {
-                        "Question": "1.Which of the following is a PaaS example?",
+                        "Question": "Which of the following is a PaaS example?",
                         "Options": [
                           "Microsoft Power BI Embedded",
                           "Azure Key Vault",
@@ -73,7 +73,7 @@
                         "Answer": "Azure Key Vault"
                       },
                       {
-                        "Question": "2.Which of the following best describes Azure Service Bus?",
+                        "Question": "Which of the following best describes Azure Service Bus?",
                         "Options": [
                           "It's a network bus that carries traffic for all Azure services",
                           "It's a set of APIs to access Azure services",
@@ -83,7 +83,7 @@
                         "Answer": "It's a message broker"
                       },
                       {
-                        "Question": "3.TCP is an example of which OSI layer?",
+                        "Question": "TCP is an example of which OSI layer?",
                         "Options": [
                           "Transport",
                           "Network",
@@ -93,7 +93,7 @@
                         "Answer": "Transport"
                       },
                       {
-                        "Question": "4.True or False , Azure Kubernetes Services has far less adminstrative overhead and provides quicker deployment of containers to cloud when compared to Azure Container Instances?",
+                        "Question": "True or False , Azure Kubernetes Services has far less adminstrative overhead and provides quicker deployment of containers to cloud when compared to Azure Container Instances?",
                         "Options": [
                           "True",
                           "False"
@@ -101,7 +101,7 @@
                         "Answer": "False"
                       },
                       {
-                        "Question": "5.Which Azure service should use to store certificates?",
+                        "Question": "Which Azure service should use to store certificates?",
                         "Options": [
                           "Azure Storage Account",
                           "Azure Security Centre",
@@ -136,6 +136,27 @@
               ]
             },
             {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "xHgE5k"
+              },
+              "activity": "${SendActivity_xHgE5k()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "5FybUl"
+              },
+              "activity": "${SendActivity_5FybUl()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "fj508M"
+              },
+              "activity": "${SendActivity_fj508M()}"
+            },
+            {
               "$kind": "Microsoft.ConfirmInput",
               "$designer": {
                 "id": "4UKQre"
@@ -168,13 +189,6 @@
               },
               "condition": "=dialog.ConfirmToProceed",
               "actions": [
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "jrjDao"
-                  },
-                  "activity": "${SendActivity_jrjDao()}"
-                },
                 {
                   "$kind": "Microsoft.Foreach",
                   "$designer": {
@@ -311,20 +325,15 @@
                         {
                           "property": "dialog.TestResultColor",
                           "value": "Good"
-                        },
-                        {
-                          "property": "dialog.TestResultDescription",
-                          "value": "=concat(\"Congratulations, dialog.CandidateFirstName ,\" \", dialog.CandidateLastName , dialog.CandidateFirstName ,\" is moved to next round in the interview process.\" )"
                         }
                       ]
                     },
                     {
-                      "$kind": "Microsoft.SetProperty",
+                      "$kind": "Microsoft.SendActivity",
                       "$designer": {
-                        "id": "NRoQ4P"
+                        "id": "WsLNDN"
                       },
-                      "property": "dialog.TestResult",
-                      "value": "Pass"
+                      "activity": "${SendActivity_WsLNDN()}"
                     }
                   ],
                   "elseActions": [
@@ -341,36 +350,17 @@
                         {
                           "property": "dialog.TestResultColor",
                           "value": "attention"
-                        },
-                        {
-                          "property": "dialog.TestResultDescription",
-                          "value": "=concat(\"Better luck in your search \", dialog.CandidateFirstName ,\" ! \", dialog.CandidateLastName , dialog.CandidateFirstName ,\" needs to improve \", dialog.CandidateCoreSkill,\" skills\" )"
                         }
                       ]
                     },
                     {
-                      "$kind": "Microsoft.SetProperty",
+                      "$kind": "Microsoft.SendActivity",
                       "$designer": {
-                        "id": "qlpxcv"
+                        "id": "GMHfni"
                       },
-                      "property": "dialog.TestResult",
-                      "value": "Fail"
+                      "activity": "${SendActivity_GMHfni()}"
                     }
                   ]
-                },
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "6xAMrp"
-                  },
-                  "activity": "${SendActivity_6xAMrp()}"
-                },
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "aAG6UL"
-                  },
-                  "activity": "${SendActivity_aAG6UL()}"
                 },
                 {
                   "$kind": "Microsoft.SendActivity",
