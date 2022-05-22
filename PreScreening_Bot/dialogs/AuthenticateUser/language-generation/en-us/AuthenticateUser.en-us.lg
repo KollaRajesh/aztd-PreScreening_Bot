@@ -1,27 +1,5 @@
 [import](common.lg)
 
-# SendActivity_W2aFCR_attachment_sP4IPl()
-> To learn more Adaptive Cards format, read the documentation at
-> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
-- ```{
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-  "version": "1.2",
-  "type": "AdaptiveCard",
-  "body": [
-    {
-      "type": "TextBlock",
-      "text": "Authentication successful!",
-      "weight": "bolder",
-      "isSubtle": false,
-        "color": "Good"
-    }
-  ]
-}```
-# SendActivity_W2aFCR()
-[Activity
-    Attachments = ${json(SendActivity_W2aFCR_attachment_sP4IPl())}
-]
-
 # SendActivity_rS7YgF_attachment_sP4IPl()
 > To learn more Adaptive Cards format, read the documentation at
 > https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots

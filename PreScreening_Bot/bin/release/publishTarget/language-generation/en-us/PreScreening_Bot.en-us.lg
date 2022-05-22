@@ -6,7 +6,9 @@
 ]
 
 # SendActivity_Greeting_text()
-- ```I'm a virtual assistant and I can help you with prescreen candidates.
+- ```Hi ${dialog.UserName},
+
+I'm a virtual assistant and I can help you with prescreen candidates.
 ```
 # SendActivity_DidNotUnderstand()
 [Activity
@@ -361,6 +363,15 @@ To start Prescreen candidate, click on below option
 ]
 
 # SendActivity_6gkBnF_text()
-- ```Hi,
+- ```Hi ${dialog.UserName},
 
 I'm a virtual assistant and I can help you with pre\-screen candidates.```
+# ChoiceInput_Prompt_EXDQIN_text()
+- ```
+To start Prescreen candidate, click on below option
+
+```
+# ChoiceInput_Prompt_EXDQIN()
+[Activity
+    Text = ${ChoiceInput_Prompt_EXDQIN_text()}
+]

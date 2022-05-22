@@ -34,12 +34,136 @@
               "condition": "=string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
               "actions": [
                 {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "0j1VtT"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "AuthenticateUser"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "e2EB1n"
+                  },
+                  "condition": "=(user.FullName!=null)",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "rQVHvY"
+                      },
+                      "value": "=split(user.FullName, ',')[1]",
+                      "property": "dialog.UserName"
+                    }
+                  ]
+                },
+                {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
                     "id": "859266",
                     "name": "Send a response"
                   },
                   "activity": "${SendActivity_Greeting()}"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "EXDQIN"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": true,
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "prompt": "${ChoiceInput_Prompt_EXDQIN()}",
+                  "property": "dialog.Choice",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "style": "heroCard",
+                  "choices": [
+                    "PreScreen Candidate"
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true
+                  },
+                  "validations": []
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "XLDzcJ"
+                  },
+                  "condition": "=(dialog.Choice ==\"PreScreen Candidate\")",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.ReplaceDialog",
+                      "$designer": {
+                        "id": "lNXJrY"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "BeginPreScreeningProcess"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "nG1mfB"
+                      },
+                      "assignments": [
+                        {
+                          "property": "user.FullName",
+                          "value": "=null"
+                        },
+                        {
+                          "property": "user.mail",
+                          "value": "=null"
+                        },
+                        {
+                          "property": "user.CandidateFirstName",
+                          "value": "=null"
+                        },
+                        {
+                          "property": "user.CandidateLastName",
+                          "value": "=null"
+                        },
+                        {
+                          "property": "user.CandidateYearsOfExperience",
+                          "value": "=null"
+                        },
+                        {
+                          "property": "user.CandidateCoreSkill",
+                          "value": "=null"
+                        },
+                        {
+                          "property": "user.RecruiterFirstName",
+                          "value": "=null"
+                        },
+                        {
+                          "property": "user.RecruiterLastName",
+                          "value": "=null"
+                        },
+                        {
+                          "property": "user.RecruiterEmail",
+                          "value": "=null"
+                        }
+                      ]
+                    },
+                    {
+                      "$kind": "Microsoft.CancelDialog",
+                      "$designer": {
+                        "id": "7QWyGB"
+                      },
+                      "activityProcessed": true
+                    }
+                  ]
                 }
               ]
             }
@@ -287,6 +411,31 @@
       },
       "intent": "Hi",
       "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Hr97hw"
+          },
+          "activityProcessed": true,
+          "dialog": "AuthenticateUser"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "8PoiwX"
+          },
+          "condition": "=(user.FullName!=null)",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "AWDG4j"
+              },
+              "value": "=split(user.FullName, ',')[1]",
+              "property": "dialog.UserName"
+            }
+          ]
+        },
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {

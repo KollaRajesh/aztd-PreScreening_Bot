@@ -54,11 +54,11 @@
               },
               "assignments": [
                 {
-                  "property": "dialog.QnAObj1",
+                  "property": "dialog.QnAObj",
                   "value": "=dialog.api_response.content"
                 },
                 {
-                  "property": "dialog.QnAObj",
+                  "property": "dialog.QnAObj1",
                   "value": {
                     "TotalNoOfQuestions": 5,
                     "Questions": [
@@ -323,17 +323,10 @@
                           "value": "Pass"
                         },
                         {
-                          "property": "dialog.TestResultColor",
-                          "value": "Good"
+                          "property": "dialog.TestResultDescription",
+                          "value": "=concat(\"Great,  \" , user.CandidateFirstName,\" \" , user.CandidateLastName  , \" has passed the initial screening. you may proceed with scheduling the next round of interview!.\")"
                         }
                       ]
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "WsLNDN"
-                      },
-                      "activity": "${SendActivity_WsLNDN()}"
                     }
                   ],
                   "elseActions": [
@@ -348,19 +341,19 @@
                           "value": "Fail"
                         },
                         {
-                          "property": "dialog.TestResultColor",
-                          "value": "attention"
+                          "property": "dialog.TestResultDescription",
+                          "value": "=concat(\"Unfortunately, \", user.CandidateFirstName , \" \", user.CandidateLastName,\" did\\'t pass the initial screening.\")"
                         }
                       ]
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "GMHfni"
-                      },
-                      "activity": "${SendActivity_GMHfni()}"
                     }
                   ]
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "uwO1zO"
+                  },
+                  "activity": "${SendActivity_uwO1zO()}"
                 },
                 {
                   "$kind": "Microsoft.SendActivity",

@@ -65,21 +65,6 @@
                   "value": "=dialog.graphResult.content.mail"
                 }
               ]
-            },
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "W2aFCR"
-              },
-              "activity": "${SendActivity_W2aFCR()}"
-            },
-            {
-              "$kind": "Microsoft.ReplaceDialog",
-              "$designer": {
-                "id": "JXzbXK"
-              },
-              "activityProcessed": true,
-              "dialog": "BeginPreScreeningProcess"
             }
           ],
           "elseActions": [

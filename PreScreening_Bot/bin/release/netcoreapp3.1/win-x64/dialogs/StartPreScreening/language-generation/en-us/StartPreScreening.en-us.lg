@@ -86,7 +86,7 @@ Minimum ${dialog.RequiredCount} correct answers are expected to schedule the nex
     Text = ${SendActivity_fj508M_text()}
 ]
 
-# SendActivity_WsLNDN_attachment_4tHC94()
+# SendActivity_uwO1zO_attachment_4tHC94()
 > To learn more Adaptive Cards format, read the documentation at
 > https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
 - ```{
@@ -304,7 +304,7 @@ Minimum ${dialog.RequiredCount} correct answers are expected to schedule the nex
                         {
                             "type": "TextBlock",
                             "text": "${dialog.TestResult}",
-                            "color": "${dialog.TestResultColor}",
+                            "color": "${if(dialog.TestResult == 'Pass', 'good', 'attention')}",
                             "weight": "Bolder"
                         }
                     ],
@@ -321,8 +321,9 @@ Minimum ${dialog.RequiredCount} correct answers are expected to schedule the nex
 			"width": "auto",
 			"items": [{
 		"type": "TextBlock",
-		"text": "Great, ${user.CandidateFirstName} ${user.CandidateLastName} has passed the initial screening. you may proceed with scheduling the next round of interview!.",
-		"color": "${dialog.TestResultColor}",
+		"text": " ",
+        "text": "${dialog.TestResultDescription}",
+		"color": "${if(dialog.TestResult == 'Pass', 'good', 'attention')}",
 		"wrap": true,
 		"id": "acResultDescriptionArea"
 	}]
@@ -333,259 +334,7 @@ Minimum ${dialog.RequiredCount} correct answers are expected to schedule the nex
 	"bleed": true
 }```
 		
-# SendActivity_WsLNDN()
+# SendActivity_uwO1zO()
 [Activity
-    Attachments = ${json(SendActivity_WsLNDN_attachment_4tHC94())}
-]
-
-# SendActivity_GMHfni_attachment_4tHC94()
-> To learn more Adaptive Cards format, read the documentation at
-> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
-- ```{
-	"$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-	"type": "AdaptiveCard",
-	"version": "1.0",
-	"body": [{
-		"type": "TextBlock",
-		"text": "Summary of Pre-Screening Test",
-		"weight": "bolder",
-		"size": "large",
-		"id": "acTitle"
-	}, {
-		"type": "ColumnSet",
-                 "separator": true,
-		"columns": [{
-			"type": "Column",
-			"width": "auto",
-			"items": [{
-				"type": "TextBlock",
-				"text": "**Candidate Name** :  ${user.CandidateFirstName} ${user.CandidateLastName}",
-				"wrap": true,
-				"id": "acSubCandidateName"
-			}, {
-				"type": "TextBlock",
-				"text": "**Recruiter Name** : ${user.RecruiterFirstName} ${user.RecruiterLastName} ",
-				"wrap": true,
-				"id": "acSubRecruiterName"
-			}, {
-				"type": "TextBlock",
-				"text": "**Assessment  on** :  ${convertFromUTC(utcNow(), 'Central Standard Time','MMM-dd-yyyy hh:mm')}   \n ",
-				"wrap": true,
-				"id": "acSubAssessmentOn"
-			}
-
-]
-		}]
-	}, {
-            "type": "ColumnSet",
-            "spacing": "Small",
-              "separator": true,
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Core Technology",
-                            "color": "Default",
-                            "weight": "Bolder"
-                        }
-                    ],
-                    "style": "emphasis",
-                    "spacing": "None"
-                },
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "${user.CandidateCoreSkill}",
-                            "color": "Default"
-                        }
-                    ],
-                    "width": "stretch",
-                    "style": "emphasis"
-                }
-            ]
-        },
-        {
-            "type": "ColumnSet",
-            "spacing": "Small",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Years of Exp",
-                            "color": "Default",
-                            "weight": "Bolder"
-                        }
-                    ],
-                    "style": "emphasis"
-                },
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "${user.CandidateYearsOfExperience}",
-                            "color": "Default"
-                        }
-                    ],
-                    "width": "stretch",
-                    "style": "emphasis"
-                }
-            ]
-        },
-        {
-            "type": "ColumnSet",
-            "spacing": "Small",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Total no of questions:",
-                            "color": "Default",
-                            "weight": "Bolder"
-                        }
-                    ],
-                    "style": "emphasis"
-                },
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "${dialog.TotalNoOfQuestions}",
-                            "color": "Default"
-                        }
-                    ],
-                    "width": "stretch",
-                    "style": "emphasis"
-                }
-            ]
-        },
-        {
-            "type": "ColumnSet",
-            "spacing": "Small",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "No of correct answers:",
-                            "color": "Default",
-                            "weight": "Bolder"
-                        }
-                    ],
-                    "style": "emphasis"
-                },
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "${dialog.NoOfCorrectAnswers}",
-                            "color": "Good"
-                        }
-                    ],
-                    "width": "stretch",
-                    "style": "emphasis"
-                }
-            ]
-        },
-        {
-            "type": "ColumnSet",
-            "spacing": "Small",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "No of wrong answers:",
-                            "color": "Default",
-                            "weight": "Bolder"
-                        }
-                    ],
-                    "style": "emphasis"
-                },
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "${dialog.NoOfWrongAnswers}",
-                            "color": "Attention"
-                        }
-                    ],
-                    "width": "stretch",
-                    "style": "emphasis"
-                }
-            ]
-        },
-        {
-            "type": "ColumnSet",
-            "spacing": "Small",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Result:",
-                            "color": "Default",
-                            "weight": "Bolder"
-                        }
-                    ],
-                    "style": "emphasis"
-                },
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "${dialog.TestResult}",
-                            "color": "${dialog.TestResultColor}",
-                            "weight": "Bolder"
-                        }
-                    ],
-                    "width": "stretch",
-                    "style": "emphasis"
-                }
-            ]
-        },
-{
-		"type": "ColumnSet",
-                 "separator": true,
-		"columns": [{
-			"type": "Column",
-			"width": "auto",
-			"items": [{
-		"type": "TextBlock",
-		"text": " Unfortunately, ${user.CandidateFirstName} ${user.CandidateLastName} didn't pass the initial screening.",
-		"color": "${dialog.TestResultColor}",
-		"wrap": true,
-		"id": "acResultDescriptionArea"
-	}]
-		}]
-	}
-
-],
-	"bleed": true
-}```
-		
-# SendActivity_GMHfni()
-[Activity
-    Attachments = ${json(SendActivity_GMHfni_attachment_4tHC94())}
+    Attachments = ${json(SendActivity_uwO1zO_attachment_4tHC94())}
 ]
