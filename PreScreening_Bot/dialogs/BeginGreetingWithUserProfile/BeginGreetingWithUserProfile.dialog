@@ -1,0 +1,132 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ZKOyUE",
+    "name": "BeginGreetingWithUserProfile",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Kf6Ok7"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "gzz6xP",
+            "name": "Send a response"
+          },
+          "activity": "${SendActivity_gzz6xP()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "YGrmVO"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${ChoiceInput_Prompt_YGrmVO()}",
+          "property": "dialog.Choice",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "style": "heroCard",
+          "choices": [
+            "PreScreen Candidate"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          },
+          "validations": []
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "iflkaW"
+          },
+          "condition": "=(dialog.Choice ==\"PreScreen Candidate\")",
+          "actions": [
+            {
+              "$kind": "Microsoft.ReplaceDialog",
+              "$designer": {
+                "id": "yXMGo6"
+              },
+              "activityProcessed": true,
+              "dialog": "BeginPreScreeningProcess"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "DVRhPd"
+              },
+              "assignments": [
+                {
+                  "property": "user.FullName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.mail",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateFirstName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateLastName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateYearsOfExperience",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.CandidateCoreSkill",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.RecruiterFirstName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.RecruiterLastName",
+                  "value": "=null"
+                },
+                {
+                  "property": "user.RecruiterEmail",
+                  "value": "=null"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.CancelDialog",
+              "$designer": {
+                "id": "0V64DS"
+              },
+              "activityProcessed": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "BeginGreetingWithUserProfile.lg",
+  "recognizer": "BeginGreetingWithUserProfile.lu.qna",
+  "id": "BeginGreetingWithUserProfile"
+}

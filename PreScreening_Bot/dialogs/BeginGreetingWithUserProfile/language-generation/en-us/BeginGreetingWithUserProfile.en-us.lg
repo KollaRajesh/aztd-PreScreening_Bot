@@ -1,0 +1,21 @@
+[import](common.lg)
+
+# SendActivity_Greeting_text()
+- ```Hi ${dialog.UserName},
+
+I'm a virtual assistant and I can help you with prescreen candidates.
+```
+# SendActivity_gzz6xP()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# ChoiceInput_Prompt_YGrmVO_text()
+- ```
+To start Prescreen candidate, click on below option
+
+```
+# ChoiceInput_Prompt_YGrmVO()
+[Activity
+    Text = ${ChoiceInput_Prompt_YGrmVO_text()}
+]

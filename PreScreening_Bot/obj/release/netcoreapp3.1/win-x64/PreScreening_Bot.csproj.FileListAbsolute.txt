@@ -516,3 +516,12 @@ C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\b
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\generated\interruption\AuthenticateUser.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\dialogs\AuthenticateUser\knowledge-base\en-us\AuthenticateUser.en-us.qna
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\generated\interruption\AuthenticateUser.en-us.qna
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\dialogs\BeginGreetingWithUserProfile\BeginGreetingWithUserProfile.dialog
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\dialogs\BeginGreetingWithUserProfile\recognizers\BeginGreetingWithUserProfile.en-us.lu.dialog
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\dialogs\BeginGreetingWithUserProfile\recognizers\BeginGreetingWithUserProfile.lu.dialog
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\dialogs\BeginGreetingWithUserProfile\recognizers\BeginGreetingWithUserProfile.lu.qna.dialog
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\dialogs\BeginGreetingWithUserProfile\language-generation\en-us\BeginGreetingWithUserProfile.en-us.lg
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\dialogs\BeginGreetingWithUserProfile\language-understanding\en-us\BeginGreetingWithUserProfile.en-us.lu
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\generated\interruption\BeginGreetingWithUserProfile.en-us.lu
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\dialogs\BeginGreetingWithUserProfile\knowledge-base\en-us\BeginGreetingWithUserProfile.en-us.qna
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\netcoreapp3.1\win-x64\generated\interruption\BeginGreetingWithUserProfile.en-us.qna

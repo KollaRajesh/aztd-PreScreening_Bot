@@ -219,6 +219,10 @@
                         {
                           "property": "dialog.QuestionNumber",
                           "value": "=add(dialog.foreach.index, 1)"
+                        },
+                        {
+                          "property": "dialog.SelectedAnswer",
+                          "value": "=\"\""
                         }
                       ]
                     },

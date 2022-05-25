@@ -1,15 +1,5 @@
 [import](common.lg)
 
-# SendActivity_Greeting()
-[Activity
-    Text = ${SendActivity_Greeting_text()}
-]
-
-# SendActivity_Greeting_text()
-- ```Hi ${dialog.UserName},
-
-I'm a virtual assistant and I can help you with prescreen candidates.
-```
 # SendActivity_DidNotUnderstand()
 [Activity
     Text = ${SendActivity_DidNotUnderstand_text()}
@@ -296,16 +286,6 @@ ${user.CandidateFirstName} is moved to next round  in the interview process
 
 # SendActivity_q4WoRr_text()
 - $confirmation
-# ChoiceInput_Prompt_ZbUQOn_text()
-- ```
-To start Prescreen candidate, click on below option
-
-```
-# ChoiceInput_Prompt_ZbUQOn()
-[Activity
-    Text = ${ChoiceInput_Prompt_ZbUQOn_text()}
-]
-
 # SendActivity_R9aYTu_attachment_NgLOjk()
 > To learn more Adaptive Cards format, read the documentation at
 > https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
@@ -357,21 +337,3 @@ To start Prescreen candidate, click on below option
 
 # SendActivity_UtmnZh_text()
 - ${dialog.TestResultDescription}
-# SendActivity_6gkBnF()
-[Activity
-    Text = ${SendActivity_6gkBnF_text()}
-]
-
-# SendActivity_6gkBnF_text()
-- ```Hi ${dialog.UserName},
-
-I'm a virtual assistant and I can help you with pre\-screen candidates.```
-# ChoiceInput_Prompt_EXDQIN_text()
-- ```
-To start Prescreen candidate, click on below option
-
-```
-# ChoiceInput_Prompt_EXDQIN()
-[Activity
-    Text = ${ChoiceInput_Prompt_EXDQIN_text()}
-]

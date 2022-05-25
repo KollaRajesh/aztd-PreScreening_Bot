@@ -13,6 +13,10 @@ C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\b
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\AuthenticateUser\recognizers\AuthenticateUser.en-us.lu.dialog
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\AuthenticateUser\recognizers\AuthenticateUser.lu.dialog
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\AuthenticateUser\recognizers\AuthenticateUser.lu.qna.dialog
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginGreetingWithUserProfile\BeginGreetingWithUserProfile.dialog
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginGreetingWithUserProfile\recognizers\BeginGreetingWithUserProfile.en-us.lu.dialog
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginGreetingWithUserProfile\recognizers\BeginGreetingWithUserProfile.lu.dialog
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginGreetingWithUserProfile\recognizers\BeginGreetingWithUserProfile.lu.qna.dialog
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginPreScreeningProcess\BeginPreScreeningProcess.dialog
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\CancelDialog\CancelDialog.dialog
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\CancelDialog\recognizers\CancelDialog.en-us.lu.dialog
@@ -33,6 +37,7 @@ C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\b
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\StartPreScreening\StartPreScreening.dialog
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\PreScreening_Bot.dialog
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\AuthenticateUser\language-generation\en-us\AuthenticateUser.en-us.lg
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginGreetingWithUserProfile\language-generation\en-us\BeginGreetingWithUserProfile.en-us.lg
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginPreScreeningProcess\language-generation\en-us\BeginPreScreeningProcess.en-us.lg
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\CancelDialog\language-generation\en-us\CancelDialog.en-us.lg
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\GetCandidateDetails\language-generation\en-us\GetCandidateDetails.en-us.lg
@@ -42,6 +47,7 @@ C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\b
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\language-generation\en-us\common.en-us.lg
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\language-generation\en-us\PreScreening_Bot.en-us.lg
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\AuthenticateUser\language-understanding\en-us\AuthenticateUser.en-us.lu
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginGreetingWithUserProfile\language-understanding\en-us\BeginGreetingWithUserProfile.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginPreScreeningProcess\language-understanding\en-us\BeginPreScreeningProcess.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\CancelDialog\language-understanding\en-us\CancelDialog.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\GetCandidateDetails\language-understanding\en-us\GetCandidateDetails.en-us.lu
@@ -49,12 +55,14 @@ C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\b
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\HelpDialog\language-understanding\en-us\HelpDialog.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\StartPreScreening\language-understanding\en-us\StartPreScreening.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\AuthenticateUser.en-us.lu
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\BeginGreetingWithUserProfile.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\CancelDialog.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\GetCandidateDetails.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\GetRecruiterDetails.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\HelpDialog.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\language-understanding\en-us\PreScreening_Bot.en-us.lu
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\AuthenticateUser\knowledge-base\en-us\AuthenticateUser.en-us.qna
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginGreetingWithUserProfile\knowledge-base\en-us\BeginGreetingWithUserProfile.en-us.qna
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\BeginPreScreeningProcess\knowledge-base\en-us\BeginPreScreeningProcess.en-us.qna
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\CancelDialog\knowledge-base\en-us\CancelDialog.en-us.qna
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\emptyBot\knowledge-base\en-us\emptyBot.en-us.qna
@@ -63,6 +71,7 @@ C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\b
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\HelpDialog\knowledge-base\en-us\HelpDialog.en-us.qna
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\dialogs\StartPreScreening\knowledge-base\en-us\StartPreScreening.en-us.qna
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\AuthenticateUser.en-us.qna
+C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\BeginGreetingWithUserProfile.en-us.qna
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\CancelDialog.en-us.qna
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\GetCandidateDetails.en-us.qna
 C:\Users\rkolla\CodeRep\labs\ChatBotComposer\PreScreening_Bot\PreScreening_Bot\bin\release\publishTarget\generated\interruption\GetRecruiterDetails.en-us.qna
